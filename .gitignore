@@ -1,0 +1,14 @@
+/target/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ
+.idea/
+psts.iml
+
+# Log
+logs/
+
