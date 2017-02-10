@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.jjl.pest</groupId>
-  <artifactId>pets</artifactId>
+  <artifactId>pets-town</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>pets-town Maven Webapp</name>
@@ -22,13 +22,20 @@
       <version>4.12</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!--<dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>jsp-api</artifactId>
         <version>2.0</version>
-    </dependency>
+    </dependency>-->
 
-    <dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>servlet-api</artifactId>
+          <version>2.5</version>
+          <scope>provided</scope>
+      </dependency>
+
+      <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-core</artifactId>
         <version>${spring.version}</version>
@@ -194,25 +201,45 @@
         <artifactId>mybatis</artifactId>
         <version>3.4.1</version>
     </dependency>
-    <dependency>
+    <!--<dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>servlet-api</artifactId>
         <version>3.0-alpha-1</version>
-    </dependency>
+    </dependency>-->
   </dependencies>
 
   <build>
     <finalName>pets-town</finalName>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.8</source>
-          <target>1.8</target>
-          <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
-    </plugins>
+        <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version>
+            <configuration>
+                <path>/pets-town</path>
+                <port>9090</port>
+                <uriEncoding>UTF-8</uriEncoding>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+                <encoding>UTF-8</encoding>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <source>1.8</source>
+              <target>1.8</target>
+              <encoding>UTF-8</encoding>
+            </configuration>
+            </plugin>
+        </plugins>
   </build>
 </project>
