@@ -38,6 +38,7 @@
       <param-value>classpath:spring-mvc.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
+    <!-- servlet 3.0 的特性，此处使用 servlet 2.5-->
     <!--<async-supported>true</async-supported>-->
   </servlet>
   <servlet-mapping>
