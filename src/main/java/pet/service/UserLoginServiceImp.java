@@ -10,22 +10,15 @@ import javax.annotation.Resource;
 /**
  * Created by developer on 2017/2/10.
  */
-@Service("userLoginService")
+@Service
 public class UserLoginServiceImp implements UserLoginService {
 
+    @Autowired
     private UsersMapper usersMapper;
-
-    public UsersMapper getUsersMapper() {
-        return usersMapper;
-    }
-  @Autowired
-    public void setUsersMapper(UsersMapper usersMapper) {
-        this.usersMapper = usersMapper;
-    }
 
     public Users checkLogin(String name, String password){
           Users users = usersMapper.findUserByName(name);
-          if(users!=null && users.getUpasswold().equals(password)){
+          if(users!=null && users.getUpassword().equals(password)){
               return users;
           }
         return null;

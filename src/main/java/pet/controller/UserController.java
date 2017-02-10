@@ -1,12 +1,12 @@
 package pet.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import pet.model.Users;
 import pet.service.UserLoginService;
-
-import javax.annotation.Resource;
 
 /**
  * Created by developer on 2017/2/10.
@@ -14,15 +14,17 @@ import javax.annotation.Resource;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-  @Resource
+    @Autowired
     private UserLoginService userLoginService;
+
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(@RequestParam("username") String name,@RequestParam("password") String password ){
+    public String login(@RequestParam("username") String name,
+                        @RequestParam("password") String password ){
        Users user = userLoginService.checkLogin(name,password);
         System.out.print(name);
         if(user!=null ){
             return "welcome";
         }
-        return "userLogin";
+        return "/index.jsp";
     }
 }

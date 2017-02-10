@@ -6,14 +6,15 @@ public class Users {
     private String uname;
 
     private Integer usex;
-    private String upasswold;
+    private String upassword;
 
-    public String getUpasswold() {
-        return upasswold;
+
+    public String getUpassword() {
+        return upassword;
     }
 
-    public void setUpasswold(String upasswold) {
-        this.upasswold = upasswold;
+    public void setUpassword(String upassword) {
+        this.upassword = upassword;
     }
 
     public String getUid() {

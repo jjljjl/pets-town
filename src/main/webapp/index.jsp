@@ -1,11 +1,15 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>测试</title>
+    <title>登陆页面</title>
 </head>
-
 <body>
-${user.userName}
+<form action="<%=request.getContextPath() %>/user/login" method="post" id="myform">
+    <input type="text" id="username" name="username"/>
+    <input type="password" id="password" name="password"/>
+    <input type="submit" value="提交" id="login" />
+</form>
 </body>
+
 </html>

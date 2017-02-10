@@ -11,10 +11,10 @@
             http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 	<!-- 引入属性文件 -->
-	<context:property-placeholder location="classpath:jdbc.properties" />
+	<!--<context:property-placeholder location="classpath:jdbc.properties" />-->
 
 	<!-- 自动扫描(自动注入) -->
-	<context:component-scan base-package="pet.service" />
+	<context:component-scan base-package="pet" />
 
 	<mvc:annotation-driven/>
 	<mvc:default-servlet-handler/>

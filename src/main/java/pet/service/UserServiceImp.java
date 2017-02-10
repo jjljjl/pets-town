@@ -7,19 +7,10 @@ import org.springframework.stereotype.Service;
 import pet.dao.UserMapper;
 import pet.model.User;
 
-@Service("userService")
+@Service
 public class UserServiceImp implements UserService {
-
-	private UserMapper userMapper ;
-
-	public UserMapper getUserMapper() {
-		return userMapper;
-	}
-
 	@Autowired
-	public void setUserMapper(UserMapper userMapper) {
-		this.userMapper = userMapper;
-	}
+	private UserMapper userMapper ;
 
 	@Override
 	public User getUserById(int id) {

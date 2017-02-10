@@ -6,21 +6,25 @@
     <result column="uName" property="uname" jdbcType="VARCHAR" />
     <result column="uSex" property="usex" jdbcType="INTEGER" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    uId, uName, uSex,uPassword
-  </sql>
-  <select id="findUserByName" resultMap="BaseResultMap" parameterType="java.lang.String">
 
-  select *
-  from user
-  where uName = #{uname,jdbcType=VARCHAR}
+  <sql id="Base_Column_List" >
+    uid, uname, usex, upassword
+  </sql>
+
+  <select id="findUserByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+    SELECT
+        <include refid="Base_Column_List"/>
+    FROM user
+    WHERE uname = #{uname,jdbcType=VARCHAR}
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+
+  <!--<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from user
     where uId = #{uid,jdbcType=VARCHAR}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from user
     where uId = #{uid,jdbcType=VARCHAR}
@@ -70,8 +74,7 @@
   </update>
   <update id="updateByPrimaryKey" parameterType="pet.model.Users" >
     update user
-    set uName = #{uname,jdbcType=VARCHAR},
-      uSex = #{usex,jdbcType=INTEGER}
+      set uName = #{uname,jdbcType=VARCHAR},uSex = #{usex,jdbcType=INTEGER}
     where uId = #{uid,jdbcType=VARCHAR}
-  </update>
+  </update>-->
 </mapper>
