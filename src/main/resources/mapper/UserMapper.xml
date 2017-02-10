@@ -1,36 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="pet.dao.UserMapper" >
   <resultMap id="BaseResultMap" type="pet.model.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="sid" property="sid" jdbcType="VARCHAR" />
+    <result column="sId" property="sid" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
   </resultMap>
-
   <sql id="Base_Column_List" >
-    id, sid, name
+    id, sId, name
   </sql>
-
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-      <include refid="Base_Column_List"/>
+    select
+    <include refid="Base_Column_List" />
     from student
     where id = #{id,jdbcType=INTEGER}
   </select>
-
-  <!--<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from student
     where id = #{id,jdbcType=INTEGER}
   </delete>
-
   <insert id="insert" parameterType="pet.model.User" >
-    insert into student (id, sId, name)
-    values (#{id,jdbcType=INTEGER}, #{sid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
+    insert into student (id, sId, name
+    )
+    values (#{id,jdbcType=INTEGER}, #{sid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}
+    )
   </insert>
-
   <insert id="insertSelective" parameterType="pet.model.User" >
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides="," >
@@ -44,7 +38,6 @@
         name,
       </if>
     </trim>
-
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=INTEGER},
@@ -57,7 +50,6 @@
       </if>
     </trim>
   </insert>
-
   <update id="updateByPrimaryKeySelective" parameterType="pet.model.User" >
     update student
     <set >
@@ -70,12 +62,10 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-
   <update id="updateByPrimaryKey" parameterType="pet.model.User" >
     update student
     set sId = #{sid,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR}
+    name = #{name,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
-  </update>-->
-
+  </update>
 </mapper>
