@@ -1,0 +1,73 @@
+#top {
+	background-color: #F9F9F9;
+	font-size: 12px;
+}
+.main {
+	max-height: 75px;
+}
+.col-right {
+	position: relative;
+}
+.btn-right {
+	position: absolute;
+	right: 0px;
+}
+.nav-hr {
+	color: blue;
+	margin: 0px;
+	border: none;
+	border-top: 3px solid  #F47F16;
+	position: relative;
+	top: -1px;
+}
+#bs-example-navbar-collapse-1 {
+	font-size: 16px;
+	position: relative;
+	left: -15px;
+}
+#my-slide {
+	padding: 0px;
+}
+#bs-example-navbar-collapse-1 ul>li>a:hover{
+	background-color: #F47F16;
+	color: #FFF;
+}
+a {
+	color: #000;
+}
+a:hover, a:focus {
+    color: #F47F16;
+    text-decoration: underline;
+}
+.footer-list {
+	width: 900px;
+	overflow: hidden;
+}
+.footer {
+	background-color: #1F1F1F;
+	font-size: 12px;
+}
+.footer a {
+	color: #FFF;
+}
+.footer p{
+	text-align: center;
+}
+#footer-list {
+	margin: 0px;
+	height: 100px;
+	text-align: center;
+}
+#footer-list li {
+	line-height: 6em;
+}
+#content span {
+	color: #FFF;
+}
+#select-category a {
+	color: #1E53C4;
+	text-decoration: none;
+}
+#select-category a.dog-breed-active {
+	color: #000000;
+}

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import pet.dao.UserMapper;
 import pet.model.User;
 
-@Service
+@Service("userService")
 public class UserServiceImp implements UserService {
 	@Autowired
 	private UserMapper userMapper ;

@@ -1,0 +1,34 @@
+.solid{
+	width: 750px;
+	height: 440px;
+	position: relative;
+}
+.solid img{
+	border: none;
+}
+.botton{
+	text-align: center;
+	position: absolute;
+	bottom: 15px;
+}
+.botton span{
+	background-color: #c7c171;
+	width: 25px;
+	line-height: 25px;
+	display: inline-block;
+	border-radius: 18px;	
+}
+.botton span.curr,.botton span:hover{
+	background-color: #8A2BE2;
+}
+.dogDaqo{
+	width: 150px;
+	height: 150px;
+	border: 1px solid gainsboro;
+}
+.thumbnail:hover{
+	border-color: red;
+	width: 120%;
+	height: 120%;
+}
+

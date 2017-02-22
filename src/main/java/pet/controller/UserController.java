@@ -25,6 +25,6 @@ public class UserController {
         if(user!=null ){
             return "welcome";
         }
-        return "/index.jsp";
+        return "indexs";
     }
 }

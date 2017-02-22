@@ -1,0 +1,10 @@
+
+.th-style{
+	background-color:rgb(250,240,231);
+}
+.thumbnail:hover{
+	background-color: rgb(250,239,230);
+}
+.f1 :hover{
+	opacity: 0.8;
+}
