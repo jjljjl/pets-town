@@ -1,11 +1,15 @@
 package pet.test;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import pet.model.User;
+import pet.model.UserRegist;
+import pet.service.UserRegistService;
 import pet.service.UserService;
+import pet.util.PagedResult;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
@@ -14,6 +18,8 @@ public class TestMyBatis {
     @Autowired
     private UserService userService;
 
+   @Autowired
+   private UserRegistService userRegistService;
 
     @Test
     public void test1(){
@@ -24,5 +30,14 @@ public class TestMyBatis {
     @Test
     public void testHello(){
         System.out.println("Hello world");
+
+
+    }
+
+    @Test
+    public void queryByPage() {
+        PagedResult<UserRegist> pagedResult = userRegistService.queryByPage(null, 1, 10);//null表示查全部
+        System.out.print("结果：" + pagedResult);
+        userRegistService.isExist("jjl","123456","18855348386","123@qq.com");
     }
 }

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
  * Created by developer on 2017/2/9.
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/use")
 public class TestController {
 
     @Resource
