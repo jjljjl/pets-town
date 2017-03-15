@@ -1,6 +1,9 @@
 package pet.dao;
 
+import org.apache.ibatis.annotations.Param;
 import pet.model.User;
+
+import java.util.List;
 
 public interface UserMapper {
 
@@ -15,4 +18,5 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+    List<User> selectUserByUserName(@Param("name") String name);
 }

@@ -50,6 +50,13 @@
       </if>
     </trim>
   </insert>
+  <select id="selectUserByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT *
+    FROM student
+    WHERE 1 = 1
+      AND name like #{name,jdbcType=VARCHAR}
+    ORDER BY id
+  </select>
   <update id="updateByPrimaryKeySelective" parameterType="pet.model.User" >
     update student
     <set >

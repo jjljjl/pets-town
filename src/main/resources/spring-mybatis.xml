@@ -11,7 +11,7 @@
                 http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 
-<!--<context:component-scan base-package="pet" />-->
+<context:component-scan base-package="pet" />
 <!-- 引入配置文件 -->
 <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
     <property name="location" value="classpath:jdbc.properties" />
@@ -35,10 +35,10 @@
     <!-- 自动扫描mapping.xml文件 -->
     <property name="mapperLocations">
         <list>
-            <value>classpath*:mapper/UsersMapper.xml</value>
-            <value>classpath*:mapper/UserMapper.xml</value>
+            <value>classpath*:mapper/*.xml</value>
         </list>
     </property>
+    <property name="configLocation" value="classpath:/mybatis-config.xml" />
 </bean>
 
 <!-- DAO接口所在包名，Spring会自动查找其下的类 -->

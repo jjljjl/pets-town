@@ -4,12 +4,11 @@
 <head>
     <title>登陆页面</title>
 </head>
+<link rel ="shoutcut icon" href="img/index/dog_16px_1143885_easyicon.net.ico"/>
 <body>
-<form action="<%=request.getContextPath() %>/user/login" method="post" id="myform">
-    <input type="text" id="username" name="username"/>
-    <input type="password" id="password" name="password"/>
-    <input type="submit" value="提交" id="login" />
-</form>
+${user.id}<br>
+${user.name}<br>
+<a href="backstage">分页实例</a>
 </body>
 
 </html>
