@@ -9,4 +9,6 @@ import pet.util.PagedResult;
 public interface AdminService {
     Boolean isHave(String username, String password);
     PagedResult<Admin> queryPage(String username,Integer pageNo,Integer pageSize);
+
+    void deleteAdmin(int adminId);
 }

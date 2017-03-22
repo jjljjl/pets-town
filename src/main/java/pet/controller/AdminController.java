@@ -59,4 +59,10 @@ public class AdminController extends  BaseController{
             return responseFail(e.getMessage());
         }
     }
+
+ @RequestMapping("/delete/admin")
+  public String deleteAdmin(@RequestParam("adminId") int adminId){
+     adminService.deleteAdmin(adminId);
+     return "redirect:/background/admin";
+ }
 }

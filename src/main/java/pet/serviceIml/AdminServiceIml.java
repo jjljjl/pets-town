@@ -35,5 +35,10 @@ public class AdminServiceIml implements AdminService {
         return BeanUtil.toPagedResult(adminMapper.selectAdminByName(username));
     }
 
+    @Override
+    public void deleteAdmin(int adminId) {
+        adminMapper.deleteByPrimaryKey(adminId);
+    }
+
 
 }

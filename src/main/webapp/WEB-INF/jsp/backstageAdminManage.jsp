@@ -79,6 +79,7 @@
             </div>
         </div>
     </div>
+    </div>
     <script type='text/javascript'>
 
         //获取当前项目的路径
@@ -157,11 +158,11 @@
                             $("#tableBody").empty();//清空表格内容
                             if (dataList.length > 0 ) {
                                 $(dataList).each(function(){//重新生成
-                                    $("#tableBody").append('<tr>');
-                                    $("#tableBody").append('<td>' + this.id + '</td>');
+                                    $("#tableBody").append('<tr id ="selectTr" >');
+                                    $("#tableBody").append('<td id="selectId">' + this.id + '</td>');
                                     $("#tableBody").append('<td>' + this.adminName + '</td>');
                                     $("#tableBody").append('<td>' + this.adminPwd + '</td>');
-                                    $("#tableBody").append('<td>   <button type="button" id="deleteUser" class="btn btn-danger">'+
+                                    $("#tableBody").append('<td>   <button type="button" id="deleteU" class="btn btn-danger" onclick="deleteUser()">'+
                                             ' <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除'+
                                             ' </button></td>');
                                     $("#tableBody").append('</tr>');
@@ -194,6 +195,25 @@
                 buildTable(userName,1,PAGESIZE);
             });
         });
+        /*function deleteUser(){
+            var url =  urlRootContext + "/delete/admin"; //请求的网址
+            var adminId = $("#selectId")[0].textContent;
+            var params={'adminId':adminId};
+            console.log($("#selectTr"));
+            $.ajax({
+                type:"POST",
+                url:url,
+                async:false,
+                data:params,
+                success: function(data){
+                    console.log("dddd")
+                }
+            })
+        }*/
+        function deleteUser() {
+            var adminId = $("#selectId")[0].textContent;
+            window.location.href= urlRootContext+"/delete/admin?adminId="+adminId;
+        }
     </script>
 
 </body>

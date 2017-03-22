@@ -13,16 +13,11 @@ import pet.util.PagedResult;
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
 public class TestMyBatis {
 
-    @Autowired
-    private UserService userService;
+
 
     @Autowired
     private AdminService adminService;
-    @Test
-    public void test1(){
-        User user = userService.getUserById(1);
-        System.out.println(user.getName());
-    }
+
 
     @Test
     public void testHello(){
