@@ -3,7 +3,7 @@ package pet.util;
 import java.util.List;
 
 /**
- * Created by Jiang on 2017/3/12.
+ * Created by developer on 2017/2/15.
  */
 public class PagedResult<T> extends BaseEntity {
 

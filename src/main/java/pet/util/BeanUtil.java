@@ -1,9 +1,11 @@
 package pet.util;
-import java.util.List;
-import pet.util.PagedResult;
+
 import com.github.pagehelper.Page;
+
+import java.util.List;
+
 /**
- * Created by Jiang on 2017/3/12.
+ * Created by developer on 2017/2/15.
  */
 public class BeanUtil {
     public static <T> PagedResult<T> toPagedResult(List<T> datas) {

@@ -1,16 +1,17 @@
 package pet.util;
 
 import java.io.Serializable;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.lang.reflect.Method;
+
 /**
- * Created by Jiang on 2017/3/12.
+ * Created by developer on 2017/2/15.
  */
-public abstract class BaseEntity implements Serializable{
+public abstract class BaseEntity  implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
@@ -88,5 +89,4 @@ public abstract class BaseEntity implements Serializable{
         Method getMethod;
         String propName;
     }
-
 }
