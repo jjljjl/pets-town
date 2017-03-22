@@ -19,5 +19,10 @@ public class IndexController {
     public  String register(){
         return "regist";
     }
+
+    @RequestMapping("/toMain")
+    public  String toMain(){
+        return  "main";
+    }
 }
 

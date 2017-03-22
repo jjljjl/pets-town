@@ -10,7 +10,7 @@ $(document).ready(function(){
 		rules:{
 			username:{
 				required:true,//必填
-				minlength:6, //最少6个字符
+				minlength:3, //最少6个字符
 				maxlength:32,//最多20个字符
 			},
 			password:{
@@ -23,7 +23,7 @@ $(document).ready(function(){
 		messages:{
 			username:{
 				required:"必须填写用户名",
-				minlength:"用户名至少为6个字符",
+				minlength:"用户名至少为3个字符",
 				maxlength:"用户名至多为32个字符",
 				remote: "用户名已存在",
 			},
@@ -71,7 +71,7 @@ $(document).ready(function(){
 		messages:{
 			username:{
 				required:"必须填写用户名",
-				minlength:"用户名至少为6个字符",
+				minlength:"用户名至少为3个字符",
 				maxlength:"用户名至多为32个字符",
 				remote: "用户名已存在",
 			},
@@ -99,7 +99,7 @@ $(document).ready(function(){
 	//添加自定义验证规则
 	jQuery.validator.addMethod("phone_number", function(value, element) { 
 		var length = value.length; 
-		var phone_number = /^(((13[0-9]{1})|(15[0-9]{1}))+\d{8})$/ 
+		var phone_number = /^1[34578]\d{9}$/
 		return this.optional(element) || (length == 11 && phone_number.test(value)); 
 	}, "手机号码格式错误"); 
 });

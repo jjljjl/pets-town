@@ -1,14 +1,14 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Jiang
-  Date: 2017/2/12
-  Time: 14:24
+  User: developer
+  Date: 2017/3/22
+  Time: 11:25
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>宠物乐园后台管理</title>
+    <title>后台用户管理</title>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
     <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/lib/jquery-3.1.1.min.js" ></script>
@@ -49,64 +49,41 @@
     </style>
 </head>
 <body>
-
-<div>
-
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" style="margin-top: 10px">
-        <li role="presentation" class="active"><a href="background/user">用户管理</a></li>
-        <li role="presentation"><a href="background/admin">管理员</a></li>
-        <li role="presentation"><a href="#">商品管理</a></li>
-    </ul>
-    <!-- Tab panes -->
-    <div class="tab-content">
-       <%-- <div role="tabpanel" class="tab-pane active" id="user">
-            <table class="table table-striped" >
-                <tr>
-                    <td class="active">uId</td>
-                    <td class="active">用户名</td>
-                    <td class="active">密码</td>
-                    <td class="active">邮箱</td>
-                    <td class="active">电话号码</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>--%>
-        <div role="tabpanel" class="tab-pane" id="order">
-            <table class="table table-hover">
-
-                <tr>
-                    <td class="active">oId</td>
-                    <td class="active"></td>
-                    <td class="active">密码</td>
-                    <td class="active">邮箱</td>
-                    <td class="active">电话号码</td>
-                </tr>
-            </table>
+<div class="panel-group">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            后台管理
         </div>
-        <div role="tabpanel" class="tab-pane" id="messages">
-            <div id = "queryDiv">
-                <input id = "textInput" type="text" placeholder="请输入用户名" >
-                <button id = "queryButton" class="btn btn-primary" type="button">查询</button>
+        <div class="panel-body">
+            <ul class="nav nav-tabs" >
+                <li role="presentation" class="active"><a href="user">用户管理</a></li>
+                <li role="presentation"><a href="admin">管理员</a></li>
+                <li role="presentation"><a href="#">商品管理</a></li>
+            </ul>
+            <div role="tabpanel" class="tab-pane active" id="user">
+                <table class="table table-bordered table-hover" >
+                    <div id = "queryDiv">
+                        <input id = "textInput" type="text" placeholder="请输入用户名" >
+                        <button id = "queryButton" class="btn btn-primary" type="button">查询</button>
+                    </div>
+                    <tr>
+                        <td class="active">uId</td>
+                        <td class="active">用户名</td>
+                        <td class="active">密码</td>
+                        <td class="active">邮箱</td>
+                        <td class="active">电话号码</td>
+                        <td class="success">操作</td>
+                    </tr>
+                    <tbody id ="tableBody" class="tab-content">
+                </table>
+                <div id="bottomTab" >
+                </div>
+                </table>
             </div>
-            <table class="table table-hover">
-                <tr>
-                    <td class="active">ID</td>
-                    <td class="active">用户名</td>
-                    <td class="active">密码</td>
-                </tr>
-                <tbody id ="tableBody" class="tab-content">
-            </table>
-            <div id="bottomTab" >
-            </div>
-
-        </div>
-        <div role="tabpanel" class="tab-pane" id="settings">...</div>
-    </div>
-
+        </div><!-- end of panel-footer -->
+    </div><!-- end of panel -->
 </div>
 <script type='text/javascript'>
-
     //获取当前项目的路径
     var urlRootContext = (function () {
         var strPath = window.document.location.pathname;
@@ -143,7 +120,7 @@
     //生成表格
     function buildTable(userName,pageNumber,pageSize) {
         $(function () {
-            var url =  urlRootContext + "/admins"; //请求的网址
+            var url =  urlRootContext + "/lists"; //请求的网址
             var reqParams = {'userName':userName, 'pageNumber':pageNumber,'pageSize':pageSize};//请求数据
             $.ajax({
                 type:"POST",
@@ -185,8 +162,13 @@
                             $(dataList).each(function(){//重新生成
                                 $("#tableBody").append('<tr>');
                                 $("#tableBody").append('<td>' + this.id + '</td>');
-                                $("#tableBody").append('<td>' + this.adminName + '</td>');
-                                $("#tableBody").append('<td>' + this.adminPwd + '</td>');
+                                $("#tableBody").append('<td>' + this.userName + '</td>');
+                                $("#tableBody").append('<td>' + this.password + '</td>');
+                                $("#tableBody").append('<td>' + this.telphone+ '</td>');
+                                $("#tableBody").append('<td>' + this.email + '</td>');
+                                $("#tableBody").append('<td>   <button type="button" id="deleteUser" class="btn btn-danger">'+
+                                       ' <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除'+
+                                       ' </button></td>');
                                 $("#tableBody").append('</tr>');
                             });
                         } else {
@@ -218,6 +200,5 @@
         });
     });
 </script>
-
 </body>
 </html>
