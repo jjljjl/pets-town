@@ -58,7 +58,7 @@
         </div>
         <div class="panel-body">
     <!-- Nav tabs -->
-    <ul class="nav nav-tabs" style="margin-top: 10px">
+    <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="background/user">用户管理</a></li>
         <li role="presentation"><a href="background/admin">管理员</a></li>
         <li role="presentation"><a href="#">商品管理</a></li>

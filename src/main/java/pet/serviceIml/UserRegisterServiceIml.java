@@ -37,4 +37,9 @@ public class UserRegisterServiceIml implements UserRegisterService{
         PageHelper.startPage(pageNo,pageSize);
         return BeanUtil.toPagedResult(userRegisterMapper.showUsers(username));
     }
+
+    @Override
+    public void deleteUser(int userId) {
+        userRegisterMapper.deleteByPrimaryKey(userId);
+    }
 }

@@ -161,14 +161,14 @@
                         if (dataList.length > 0 ) {
                             $(dataList).each(function(){//重新生成
                                 $("#tableBody").append('<tr>');
-                                $("#tableBody").append('<td>' + this.id + '</td>');
+                                $("#tableBody").append('<td id="selectId">' + this.id + '</td>');
                                 $("#tableBody").append('<td>' + this.userName + '</td>');
                                 $("#tableBody").append('<td>' + this.password + '</td>');
                                 $("#tableBody").append('<td>' + this.telphone+ '</td>');
                                 $("#tableBody").append('<td>' + this.email + '</td>');
-                                $("#tableBody").append('<td>   <button type="button" id="deleteUser" class="btn btn-danger">'+
-                                       ' <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除'+
-                                       ' </button></td>');
+                                $("#tableBody").append('<td>   <button type="button" id="deleteU" class="btn btn-danger" onclick="deleteUser()">'+
+                                        ' <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除'+
+                                        ' </button></td>');
                                 $("#tableBody").append('</tr>');
                             });
                         } else {
@@ -199,6 +199,10 @@
             buildTable(userName,1,PAGESIZE);
         });
     });
+    function deleteUser(){
+        var userId = $("#selectId")[0].textContent;
+        window.location.href = urlRootContext+"/delete/user?userId="+userId;
+    }
 </script>
 </body>
 </html>

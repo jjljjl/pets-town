@@ -13,4 +13,6 @@ public interface UserRegisterService {
     void insertUser(UserRegister user);
 
     PagedResult<UserRegister> queryPage(String username,Integer pageNo,Integer pageSize);
+
+    void deleteUser(int userId);
 }

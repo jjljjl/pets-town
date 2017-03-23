@@ -64,4 +64,10 @@ public class UserRegisterController extends BaseController{
             return responseFail(e.getMessage());
         }
     }
+
+    @RequestMapping("/delete/user")
+    public String deleteUser(@RequestParam("userId") int userId){
+         userRegisterService.deleteUser(userId);
+         return "redirect:/background/user";
+    }
 }

@@ -55,7 +55,7 @@
             后台管理
         </div>
         <div class="panel-body">
-            <ul class="nav nav-tabs" style="margin-top: 10px">
+            <ul class="nav nav-tabs" >
                 <li role="presentation" class="active"><a href="user">用户管理</a></li>
                 <li role="presentation"><a href="admin">管理员</a></li>
                 <li role="presentation"><a href="#">商品管理</a></li>
