@@ -44,20 +44,16 @@ public class AdminController extends  BaseController{
 
     @RequestMapping("/admins")
     @ResponseBody
-    public String list(Integer pageNumber,Integer pageSize ,String userName) {
+    public PagedResult<Admin> list(Integer pageNumber,Integer pageSize ,String userName) {
         logger.info("分页查询用户信息列表请求入参：pageNumber{},pageSize{}", pageNumber,pageSize);
         PagedResult<Admin> pageResult;
-        try {
             if("".equals(userName)){
                 pageResult = adminService.queryPage("%", pageNumber,pageSize);
             }else {
 
                 pageResult = adminService.queryPage(userName, pageNumber,pageSize);
             }
-            return responseSuccess(pageResult,"");
-        } catch (Exception e) {
-            return responseFail(e.getMessage());
-        }
+        return pageResult;
     }
 
  @RequestMapping("/delete/admin")

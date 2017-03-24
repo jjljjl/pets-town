@@ -13,23 +13,24 @@ import javax.annotation.Resource;
  */
 @Controller
 public class LoginController {
-@Resource
-private LoginService loginService;
+    @Resource
+    private LoginService loginService;
+
     @RequestMapping("/toRegist")
-     public  String toRegister(){
+    public String toRegister() {
         return "regist";
     }
 
     @RequestMapping("/toLogin")
     public String login(@RequestParam("username") String userName,
                         @RequestParam("password") String password,
-                        ModelMap modelMap){
-        boolean isHave = loginService.isHaveUser(userName,password);
-        if(isHave){
-            modelMap.addAttribute("msg","登陆成功");
+                        ModelMap modelMap) {
+        boolean isHave = loginService.isHaveUser(userName, password);
+        if (isHave) {
+            modelMap.addAttribute("msg", "登陆成功");
             return "main";
         }
-        modelMap.addAttribute("msg","用户名或者密码错误");
+        modelMap.addAttribute("msg", "用户名或者密码错误");
         return "login";
 
     }

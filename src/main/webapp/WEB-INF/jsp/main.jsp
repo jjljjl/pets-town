@@ -5,7 +5,7 @@
     <style type="text/css">
         @font-face {
             font-family: myFirstFont;
-            src: url("../../fonts/Lobster-Regular.ttf");
+            src: url("/pets-town/fonts/Lobster-Regular.ttf");
             /* IE9+ */
         }
 
@@ -14,7 +14,7 @@
         }
 
     </style>
-    <link rel ="shoutcut icon" href="../../img/index/dog_16px_1143885_easyicon.net.ico"/>
+    <link rel ="shoutcut icon" href="/pets-town/img/index/dog_16px_1143885_easyicon.net.ico"/>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/index-image.css" />
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/lib/vedio.js/video-js.min.css" />
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
@@ -56,7 +56,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <img src="../../img/index/logo.jpg"/>
+                <img src="/pets-town/img/index/logo.jpg"/>
             </div>
             <div class="col-md-6 col-md-offset-1">
                 <div class="input-group" style="margin-top: 20px;">
@@ -108,9 +108,9 @@
     <div class="demo">
         <div class="my-slider" style="overflow: hidden;position: relative;">
             <ul>
-                <li><img src="../../img/jd/index1.png"></li>
-                <li><img src="../../img/jd/index.png"></li>
-                <li><img src="../../img/jd/index3.png"></li>
+                <li><img src="/pets-town/img/jd/index1.png"></li>
+                <li><img src="/pets-town/img/jd/index.png"></li>
+                <li><img src="/pets-town/img/jd/index3.png"></li>
             </ul>
         </div>
     </div>
@@ -119,167 +119,155 @@
     <p style="font-size: 18px;font-weight: bold;color: #5C5C5C;margin:5px;margin-bottom: 10px" >热门犬种</p>
     <div class="f1">
         <a href="" >
-            <img src="../../img/tuijian/dog_1.jpg" height="254" width="550"/>
+            <img src="/pets-town/img/tuijian/dog_1.jpg" height="254" width="550"/>
         </a>
         <a href="" >
-            <img src="../../img/tuijian/dog_2.jpg" height="254" width="280"/>
+            <img src="/pets-town/img/tuijian/dog_2.jpg" height="254" width="280"/>
         </a>
         <a href="" >
-            <img src="../../img/tuijian/dog_3.jpg" height="254" width="280"/>
+            <img src="/pets-town/img/tuijian/dog_3.jpg" height="254" width="280"/>
         </a>
         <a href="" >
-            <img src="../../img/tuijian/dog_8.jpg" height="254" width="280"/>
+            <img src="/pets-town/img/tuijian/dog_8.jpg" height="254" width="280"/>
         </a>
         <a href="" >
-            <img src="../../img/tuijian/dog_5.jpg" height="254" width="280"/>
+            <img src="/pets-town/img/tuijian/dog_5.jpg" height="254" width="280"/>
         </a>
         <a href="" >
-            <img src="../../img/tuijian/dog_6.jpg" height="254" width="280"/>
+            <img src="/pets-town/img/tuijian/dog_6.jpg" height="254" width="280"/>
         </a>
         <a href="" >
-            <img src="../../img/tuijian/dog_7.jpg" height="254" width="270"/>
+            <img src="/pets-town/img/tuijian/dog_7.jpg" height="254" width="270"/>
         </a>
     </div>
 </div>
 <div class="container" style="background-color: rgb(238,238,238);">
     <table class="table">
         <tr>
-            <th class="th-style" colspan="6"><img src="../../img/index-image-images/resizeApi.png" />&nbsp;&nbsp;泰迪犬</th>
+            <th class="th-style" colspan="6"><img src="/pets-town/img/index-image-images/resizeApi.png" />&nbsp;&nbsp;泰迪犬</th>
         </tr>
         <tr>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/smy1.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/smy1.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p >名称：犬舍 CKU犬舍 </p>
                         <p>价格：2000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/smy2.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/smy2.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：泰迪乐园 </p>
                         <p>价格：2000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/smy3.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/smy3.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：信达国际名犬 </p>
                         <p>价格：2000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/smy4.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/smy4.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：国际名犬基地 </p>
                         <p>价格：2000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/smy5.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/smy5.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption " id="fontsizes">
                         <p>名称：东方名犬繁殖</p>
                         <p>价格：3000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/smy6.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/smy6.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：北京万科犬业</p>
                         <p>价格：2000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
         </tr>
         <tr>
-            <th class="th-style" colspan="6"><img src="../../img/index-image-images/resizeApi2.png" />&nbsp;&nbsp;比熊犬</th>
+            <th class="th-style" colspan="6"><img src="/pets-town/img/index-image-images/resizeApi2.png" />&nbsp;&nbsp;比熊犬</th>
         </tr>
         <tr>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/biq1.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/biq1.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：宠物馆俱乐部 </p>
                         <p>价格：2000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/bxq2.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/bxq2.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：旺财犬舍</p>
                         <p>价格：3300.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/bxq4.jpg " alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/bxq4.jpg " alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：京城名犬 </p>
                         <p>价格：2500.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/bxq5.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/bxq5.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：国际名犬中心 </p>
                         <p>价格：2000.00</p>
-                        <p><img src="img/index-image-images/b1.jpg" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/bxq2.png" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/bxq2.png" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：京福犬舍 </p>
                         <p>价格：2800.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/bxq6.jpg" alt="泰迪犬" class="img-circle"> </a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/bxq6.jpg" alt="泰迪犬" class="img-circle"> </a>
                     <div class="caption">
                         <p>名称：北京祥瑞犬业 </p>
                         <p>价格：2200.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
@@ -287,71 +275,65 @@
         </tr>
 
         <tr>
-            <th class="th-style" colspan="6"><img src="../../img/index-image-images/resizeApi3.png" />&nbsp;&nbsp;金毛犬</th>
+            <th class="th-style" colspan="6"><img src="/pets-town/img/index-image-images/resizeApi3.png" />&nbsp;&nbsp;金毛犬</th>
         </tr>
         <tr>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/jm1.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/jm1.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：英系金毛</p>
                         <p>价格：6000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/jm2.jpg" alt="泰迪犬" class="img-circle"> </a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/jm2.jpg" alt="泰迪犬" class="img-circle"> </a>
                     <div class="caption">
                         <p>名称：纯种金毛 </p>
                         <p>价格：2000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/jm3.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/jm3.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：纯种金毛 </p>
                         <p>价格：2500.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/jm4.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/jm4.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：英系金毛 </p>
                         <p>价格：4000.00</p>
-                        <p><img src="img/index-image-images/b1.jpg" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/jm5.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/jm5.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：赛级金毛 </p>
                         <p>价格：2800.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
             </td>
             <td>
                 <div class="thumbnail">
-                    <a href="#"><img src="../../img/index-image-images/jm6.jpg" alt="泰迪犬" class="img-circle"></a>
+                    <a href="#"><img src="/pets-town/img/index-image-images/jm6.jpg" alt="泰迪犬" class="img-circle"></a>
                     <div class="caption">
                         <p>名称：英系金毛 </p>
                         <p>价格：6000.00</p>
-                        <p><img src="../../img/index-image-images/b1.png" /> <img src="../../img/index-image-images/b2.png" /> <img src="../../img/index-image-images/b3.png" /></p>
                         <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
                     </div>
                 </div>
@@ -369,26 +351,25 @@
 
     <div class="row">
         <div class="col-lg-3 container">
-            <video id="really-cool-video" class="video-js vjs-default-skin" controls preload="auto" width="210" height="200" poster="../../img/index-image-images/QQ截图20161121151318.png" data-setup='{}'>
-                <source src="../../vidios/out-naiyou-daiyan.mp4" type="video/mp4">
+            <video id="really-cool-video" class="video-js vjs-default-skin" controls preload="auto" width="210" height="200" poster="/pets-town/img/index-image-images/v1.png" data-setup='{}'>
+                <source src="/pets-town/vidios/out-naiyou-daiyan.mp4" type="video/mp4">
             </video>
         </div>
         <div class="col-lg-3">
-            <video id="really-cool-video" class="video-js vjs-default-skin" controls preload="auto" width="210" height="200" poster="../../img/index-image-images/QQ截图20161121151302.png" data-setup='{}'>
-                <source src="../../vidios/lbld.mp4" type="video/mp4">
+            <video id="really-cool-video" class="video-js vjs-default-skin" controls preload="auto" width="210" height="200" poster="/pets-town/img/index-image-images/v2.png" data-setup='{}'>
+                <source src="/pets-town/vidios/lbld.mp4" type="video/mp4">
             </video>
         </div>
         <div class="col-lg-3">
-            <video id="really-cool-video" class="video-js vjs-default-skin" controls preload="auto" width="210" height="200" poster="../../img/index-image-images/QQ截图20161121152745.png" data-setup='{}'>
-                <source src="../../vidios/44.mp4" type="video/mp4">
+            <video id="really-cool-video" class="video-js vjs-default-skin" controls preload="auto" width="210" height="200" poster="/pets-town/img/index-image-images/v3.png" data-setup='{}'>
+                <source src="/pets-town/vidios/44.mp4" type="video/mp4">
             </video>
         </div>
         <div class="col-lg-3">
-            <video id = "really-cool-video" class="video-js vjs-default-skin" controls preload="auto" width="210" height="200" poster="../../img/index-image-images/QQ截图20161121154532.png" data-setup='{}'>
-                <source src="../../vidios/55.mp4" type="video/mp4">
+            <video id = "really-cool-video" class="video-js vjs-default-skin" controls preload="auto" width="210" height="200" poster="/pets-town/img/index-image-images/v4.png" data-setup='{}'>
+                <source src="/pets-town/vidios/55.mp4" type="video/mp4">
             </video>
-        </div>
-    </div>
+        </div>    </div>
 </div>
 <!--页脚-->
 <div class="footer" style="margin-top: 20px;">

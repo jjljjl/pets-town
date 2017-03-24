@@ -49,20 +49,17 @@ public class UserRegisterController extends BaseController{
 
     @RequestMapping("/lists")
     @ResponseBody
-    public String list(Integer pageNumber,Integer pageSize ,String userName) {
+    public PagedResult<UserRegister> list(Integer pageNumber,Integer pageSize ,String userName) {
         logger.info("分页查询用户信息列表请求入参：pageNumber{},pageSize{}", pageNumber,pageSize);
         PagedResult<UserRegister> pageResult;
-        try {
+
             if("".equals(userName)){
                 pageResult = userRegisterService.queryPage("%", pageNumber,pageSize);
             }else {
 
                 pageResult = userRegisterService.queryPage(userName, pageNumber,pageSize);
             }
-            return responseSuccess(pageResult,"");
-        } catch (Exception e) {
-            return responseFail(e.getMessage());
-        }
+           return  pageResult;
     }
 
     @RequestMapping("/delete/user")

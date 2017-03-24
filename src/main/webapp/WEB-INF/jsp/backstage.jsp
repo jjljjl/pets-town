@@ -61,7 +61,7 @@
     <ul class="nav nav-tabs">
         <li role="presentation" class="active"><a href="background/user">用户管理</a></li>
         <li role="presentation"><a href="background/admin">管理员</a></li>
-        <li role="presentation"><a href="#">商品管理</a></li>
+        <li role="presentation"><a href="background/showPets">商品管理</a></li>
     </ul>
     <!-- Tab panes -->
         </div>

@@ -18,4 +18,9 @@ public class BackstageController {
     public String toAdminManage(){
         return "backstageAdminManage";
     }
+
+    @RequestMapping("background/showPets")
+    public  String toShowPetsManage(){
+        return "backstageShowPetsManage";
+    }
 }

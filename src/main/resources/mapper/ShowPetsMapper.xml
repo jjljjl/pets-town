@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pet.dao.ShowPetsMapper" >
+  <resultMap id="BaseResultMap" type="pet.model.ShowPets" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="pet_name" property="petName" jdbcType="VARCHAR" />
+    <result column="pet_price" property="petPrice" jdbcType="DOUBLE" />
+    <result column="pet_type" property="petType" jdbcType="INTEGER" />
+    <result column="pet_age" property="petAge" jdbcType="INTEGER" />
+    <result column="pet_image" property="petImage" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, pet_name, pet_price, pet_type, pet_age, pet_image
+  </sql>
+
+  <select id="selectByPetsName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_show_pets
+    where pet_name like #{petName,jdbcType=VARCHAR}
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_show_pets
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="pet.model.ShowPets" >
+    insert into t_show_pets (id, pet_name, pet_price, 
+      pet_type, pet_age, pet_image
+      )
+    values (#{id,jdbcType=INTEGER}, #{petName,jdbcType=VARCHAR}, #{petPrice,jdbcType=DOUBLE}, 
+      #{petType,jdbcType=INTEGER}, #{petAge,jdbcType=INTEGER}, #{petImage,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pet.model.ShowPets" >
+    insert into t_show_pets
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="petName != null" >
+        pet_name,
+      </if>
+      <if test="petPrice != null" >
+        pet_price,
+      </if>
+      <if test="petType != null" >
+        pet_type,
+      </if>
+      <if test="petAge != null" >
+        pet_age,
+      </if>
+      <if test="petImage != null" >
+        pet_image,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="petName != null" >
+        #{petName,jdbcType=VARCHAR},
+      </if>
+      <if test="petPrice != null" >
+        #{petPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="petType != null" >
+        #{petType,jdbcType=INTEGER},
+      </if>
+      <if test="petAge != null" >
+        #{petAge,jdbcType=INTEGER},
+      </if>
+      <if test="petImage != null" >
+        #{petImage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="pet.model.ShowPets" >
+    update t_show_pets
+    <set >
+      <if test="petName != null" >
+        pet_name = #{petName,jdbcType=VARCHAR},
+      </if>
+      <if test="petPrice != null" >
+        pet_price = #{petPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="petType != null" >
+        pet_type = #{petType,jdbcType=INTEGER},
+      </if>
+      <if test="petAge != null" >
+        pet_age = #{petAge,jdbcType=INTEGER},
+      </if>
+      <if test="petImage != null" >
+        pet_image = #{petImage,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pet.model.ShowPets" >
+    update t_show_pets
+    set pet_name = #{petName,jdbcType=VARCHAR},
+      pet_price = #{petPrice,jdbcType=DOUBLE},
+      pet_type = #{petType,jdbcType=INTEGER},
+      pet_age = #{petAge,jdbcType=INTEGER},
+      pet_image = #{petImage,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

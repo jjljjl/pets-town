@@ -58,7 +58,7 @@
             <ul class="nav nav-tabs" >
                 <li role="presentation" class="active"><a href="user">用户管理</a></li>
                 <li role="presentation"><a href="admin">管理员</a></li>
-                <li role="presentation"><a href="#">商品管理</a></li>
+                <li role="presentation"><a href="showPets">商品管理</a></li>
             </ul>
             <div role="tabpanel" class="tab-pane" id="messages">
                 <div id = "queryDiv">
@@ -111,6 +111,7 @@
             },
             onPageClicked: function (e, originalEvent, type, page) {
                 var userName = $("#textInput").val(); //取内容
+                console.info(userName)
                 buildTable(userName,page,PAGESIZE);//默认每页最多10条
             }
         }
@@ -127,7 +128,6 @@
                     async:false,
                     dataType:"json",
                     success: function(data){
-                        if(data.isError == false) {
                             // options.totalPages = data.pages;
                             var newoptions = {
                                 currentPage: 1,  //当前页数
@@ -170,9 +170,6 @@
                             } else {
                                 $("#tableBody").append('<tr><th colspan ="4"><center>查询无数据</center></th></tr>');
                             }
-                        }else{
-                            alert(data.errorMsg);
-                        }
                     },
                     error: function(e){
                         alert("查询失败:" + e);
