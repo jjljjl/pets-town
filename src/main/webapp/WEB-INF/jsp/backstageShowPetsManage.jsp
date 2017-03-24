@@ -106,10 +106,10 @@
                   <label for="petAge1">年龄</label>
                   <input type="text" class="form-control" id="petAge1"  name = "petAge">
                   <label for="petType1" >类型</label>
-                  <select class="form-control" id="petType1">
-                      <option value="0" name="petType">泰迪犬</option>
-                      <option value="1" name="petType">比熊犬</option>
-                      <option value="2" name="petType">金毛犬</option>
+                  <select class="form-control" id="petType1" name="petType">
+                      <option value="0" >泰迪犬</option>
+                      <option value="1" >比熊犬</option>
+                      <option value="2" >金毛犬</option>
                   </select>
                   <br>
                   <label for="exampleInputFile">选择图片</label>

@@ -49,7 +49,6 @@ public class ShowPetsController extends BaseController {
         String petName = request.getParameter("petName");
         Double petPrice =Double.parseDouble( request.getParameter("petPrice"));
         Integer petAge =Integer.parseInt( request.getParameter("petAge"));
-        System.out.print(request.getParameter("petType"));
         Integer petType = Integer.parseInt(request.getParameter("petType"));
         String petImage = request.getParameter("petImage");
         return "";
