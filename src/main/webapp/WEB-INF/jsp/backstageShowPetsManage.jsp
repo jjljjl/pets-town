@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -98,7 +99,7 @@
                 <h4 class="modal-title" id="myModalLabel">添加宠物</h4>
             </div>
             <div class="modal-body">
-              <form action="<%=request.getContextPath() %>/addPets" method="post" id="addPetsForm">
+              <form action="<%=request.getContextPath() %>/addPets" method="post" id="addPetsForm" enctype="multipart/form-data">
                   <label for="petName1">名称</label>
                   <input type="text" class="form-control" id="petName1"  name="petName">
                   <label for="petPrice1">价格</label>
@@ -207,7 +208,14 @@
                                 $("#tableBody").append('<td>' + this.petName + '</td>');
                                 $("#tableBody").append('<td>' + this.petPrice + '</td>');
                                 $("#tableBody").append('<td>' + this.petAge + '</td>');
-                                $("#tableBody").append('<td>' + this.petType + '</td>');
+                                if(this.petType == 0){
+                                    $("#tableBody").append('<td>' + "泰迪犬" + '</td>');
+                                }else if(this.petType == 1){
+                                    $("#tableBody").append('<td>' + "比熊犬" + '</td>');
+                                }else if(this.petType == 2){
+                                    $("#tableBody").append('<td>' + "金毛" + '</td>');
+                                }
+
                                 $("#tableBody").append('<td>' + this.petImage + '</td>');
                                 $("#tableBody").append('<td>    <button type="button" class="btn btn-info">'+
                                        ' <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改'+
@@ -248,11 +256,22 @@
         var petId = $("#selectId")[0].textContent;
         window.location.href = urlRootContext + "/delete/pets?petId=" + petId;
     }
+        function addPets() {
+            var form1 = document.getElementById("addPetsForm");
+            var inputs = form1.getElementsByTagName("input");
+            var count = 0;
+            $(inputs).each(function () {
+                if (this.textContent == "") {
+                count++;
+                }
+            })
+            if(count>0){
+                $("#addPetsForm").append('<p style="color: red; margin-left: 120px;margin-top: 10px">' + "请正确填写表单" + '</p>');
+            }else {
+                form1.submit()
+            }
+        }
 
-    function addPets(){
-        var form1 = document.getElementById("addPetsForm");
-        form1.submit();
-    }
 </script>
 </body>
 </html>

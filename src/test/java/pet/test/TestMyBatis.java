@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import pet.model.Admin;
-import pet.model.ShowPets;
 import pet.service.AdminService;
 import pet.service.ShowPetsService;
 import pet.util.PagedResult;
@@ -35,9 +34,5 @@ public class TestMyBatis {
         System.out.print("查找结果" + pagedResult);
     }
 
-    @Test
-    public void queryByPage1(){
-        PagedResult<ShowPets> pagedResult = showPetsService.queryByPage("%",1,10);//null表示查全部
-        System.out.print("查找结果" + pagedResult);
-    }
+
 }

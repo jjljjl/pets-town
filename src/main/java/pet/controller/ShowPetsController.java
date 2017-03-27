@@ -3,16 +3,19 @@ package pet.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import pet.model.ShowPets;
 import pet.service.ShowPetsService;
 import pet.util.PagedResult;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 
 /**
  * Created by developer on 2017/3/24.
@@ -44,13 +47,27 @@ public class ShowPetsController extends BaseController {
     }
 
     @RequestMapping("/addPets")
-    public String addPets(HttpServletRequest request, ModelMap modelMap){
+    public String addPets(HttpServletRequest request, @RequestParam(value="petImage") MultipartFile petImage){
 
-        String petName = request.getParameter("petName");
-        Double petPrice =Double.parseDouble( request.getParameter("petPrice"));
         Integer petAge =Integer.parseInt( request.getParameter("petAge"));
         Integer petType = Integer.parseInt(request.getParameter("petType"));
-        String petImage = request.getParameter("petImage");
-        return "";
+        String petName = request.getParameter("petName");
+        Double petPrice =Double.parseDouble( request.getParameter("petPrice"));
+        /*--------图片保存路径----*/
+        String path = request.getSession().getServletContext().getRealPath("uploadImg");
+        /*-----图片路径---*/
+        String fileName = new Date().getTime()+".jpg";
+        /*-------转存文件-----  */
+        File targetFile = new File(path,fileName);
+        if(!targetFile.exists()){
+           targetFile.mkdirs();
+        }
+        try {
+            petImage.transferTo(targetFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        showPetsService.addPets(petName,petPrice,petAge,petType,fileName);
+        return "redirect:/background/showPets";
     }
 }

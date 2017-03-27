@@ -35,24 +35,12 @@
   <insert id="insertSelective" parameterType="pet.model.ShowPets" >
     insert into t_show_pets
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
         id,
-      </if>
-      <if test="petName != null" >
         pet_name,
-      </if>
-      <if test="petPrice != null" >
         pet_price,
-      </if>
-      <if test="petType != null" >
         pet_type,
-      </if>
-      <if test="petAge != null" >
         pet_age,
-      </if>
-      <if test="petImage != null" >
         pet_image,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >

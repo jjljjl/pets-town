@@ -10,4 +10,6 @@ public interface ShowPetsService {
     PagedResult<ShowPets> queryPage(String username, Integer pageNo, Integer pageSize);
 
     void deletePets(int petId);
+
+    void addPets(String petName, Double petPrice, Integer petAge, Integer petType, String petImage);
 }

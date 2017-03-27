@@ -30,4 +30,15 @@ public class ShowPetServiceIml implements ShowPetsService {
     public void deletePets(int petId) {
         showPetsMapper.deleteByPrimaryKey(petId);
     }
+
+    @Override
+    public void addPets(String petName, Double petPrice, Integer petAge, Integer petType, String petImage) {
+        ShowPets pets = new ShowPets();
+        pets.setPetAge(petAge);
+        pets.setPetImage(petImage);
+        pets.setPetName(petName);
+        pets.setPetType(petType);
+        pets.setPetPrice(petPrice);
+        showPetsMapper.insert(pets);
+    }
 }
