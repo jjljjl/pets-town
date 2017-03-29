@@ -217,7 +217,7 @@
                                 }
 
                                 $("#tableBody").append('<td>' + this.petImage + '</td>');
-                                $("#tableBody").append('<td>    <button type="button" class="btn btn-info">'+
+                                $("#tableBody").append('<td>    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modifyModal">'+
                                        ' <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改'+
                                         '</button></td>');
                                 $("#tableBody").append('</tr>');
@@ -229,7 +229,6 @@
                         } else {
                             $("#tableBody").append('<tr><th colspan ="4"><center>查询无数据</center></th></tr>');
                         }
-
                 },
                 error: function (e) {
                     alert("查询失败:" + e);
@@ -261,8 +260,10 @@
             var inputs = form1.getElementsByTagName("input");
             var count = 0;
             $(inputs).each(function () {
-                if (this.textContent == "") {
-                count++;
+                if (this.value == "") {
+                  count++;
+                }else{
+                    count=count;
                 }
             })
             if(count>0){
