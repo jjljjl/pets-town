@@ -1,6 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <html>
 <head>
+    <title>宠物乐园首页</title>
     <meta charset="UTF-8">
     <style type="text/css">
         @font-face {
@@ -12,70 +16,12 @@
         div {
             font-family: myFirstFont;
         }
+    </style
+    <jsp:include page="TheImportFile.jsp"></jsp:include>
 
-    </style>
-    <link rel ="shoutcut icon" href="/pets-town/img/index/dog_16px_1143885_easyicon.net.ico"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/index-image.css" />
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/lib/vedio.js/video-js.min.css" />
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/unslider/css/unslider.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/unslider/css/unslider-dots.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/unslider/css/site.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/font-awesome-4.7.0/css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/index.css"/>
-    <title>宠物乐园首页</title>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/lib/jquery-3.1.1.min.js" ></script>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
-    <script src="<%=request.getContextPath() %>/plateform/lib/vedio.js/video.min.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
-<header id="top" class="navbar navbar-collapse navbar-static-top" role="banner">
-    <div class="container">
-        <ul class="nav navbar-nav navbar-left">
-            <li class="header-left">
-                <p style="color: #5C5C5C">汪，欢迎来到宠物商城</p>
-            </li>
-            <li class="header-left">
-                <a href="#">首页</a>
-            </li>
-        </ul>
-        <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="login" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-job'])" target="_blank">登录</a></li>
-                <li><a href="toRegister" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-expo'])" target="_blank">注册</a></li>
-                <li><a href="http://blog.getbootstrap.com" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-blog'])" target="_blank">新闻中心</a></li>
-                <li><a href="http://blog.getbootstrap.com" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-blog'])" target="_blank">客户服务</a></li>
-                <li><a href="http://blog.getbootstrap.com" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-blog'])" target="_blank">网站导航</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-<!--搜索框区-->
-<div class="main" id="content" role="main">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="/pets-town/img/index/logo.jpg"/>
-            </div>
-            <div class="col-md-6 col-md-offset-1">
-                <div class="input-group" style="margin-top: 20px;">
-                    <div class="input-group-btn">
-                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">宝贝 </button>
-                       <%-- <ul class="dropdown-menu" role="menu">
-                        </ul>--%>
-
-                    </div><!-- /btn-group -->
-                    <input type="text" class="form-control">
-                    <span class="input-group-addon btn btn-warning">搜索</span>
-                </div>
-            </div>
-            <div class="col-md-2 col-right">
-                <button type="button" class="btn btn-warning btn-right" style="margin-top: 20px;">我的购物车</button>
-            </div>
-        </div>
-    </div>
-</div>
+<jsp:include page="TheIndexHeadPage.jsp"></jsp:include>
 <!--导航菜单-->
 <div class="navbar my-navbar" role="navigation" style="margin-bottom: 0px;margin-top: 20px;">
     <div class="container">
@@ -137,7 +83,7 @@
             <img src="/pets-town/img/tuijian/dog_6.jpg" height="254" width="280"/>
         </a>
         <a href="" >
-            <img src="/pets-town/img/tuijian/dog_7.jpg" height="254" width="270"/>
+            <img src="/pets-town/img/tuijian/dog_7.jpg" height="254" width="280"/>
         </a>
     </div>
 </div>
@@ -146,199 +92,15 @@
         <tr>
             <th class="th-style" colspan="6"><img src="/pets-town/img/index-image-images/resizeApi.png" />&nbsp;&nbsp;泰迪犬</th>
         </tr>
-        <tr>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/smy1.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p >名称：犬舍 CKU犬舍 </p>
-                        <p>价格：2000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/smy2.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：泰迪乐园 </p>
-                        <p>价格：2000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/smy3.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：信达国际名犬 </p>
-                        <p>价格：2000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/smy4.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：国际名犬基地 </p>
-                        <p>价格：2000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/smy5.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption " id="fontsizes">
-                        <p>名称：东方名犬繁殖</p>
-                        <p>价格：3000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/smy6.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：北京万科犬业</p>
-                        <p>价格：2000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-        </tr>
+        <tr id="show-teddy"></tr>
         <tr>
             <th class="th-style" colspan="6"><img src="/pets-town/img/index-image-images/resizeApi2.png" />&nbsp;&nbsp;比熊犬</th>
         </tr>
-        <tr>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/biq1.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：宠物馆俱乐部 </p>
-                        <p>价格：2000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/bxq2.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：旺财犬舍</p>
-                        <p>价格：3300.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/bxq4.jpg " alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：京城名犬 </p>
-                        <p>价格：2500.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/bxq5.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：国际名犬中心 </p>
-                        <p>价格：2000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/bxq2.png" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：京福犬舍 </p>
-                        <p>价格：2800.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/bxq6.jpg" alt="泰迪犬" class="img-circle"> </a>
-                    <div class="caption">
-                        <p>名称：北京祥瑞犬业 </p>
-                        <p>价格：2200.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-        </tr>
-
+        <tr id="show-bichon"></tr>
         <tr>
             <th class="th-style" colspan="6"><img src="/pets-town/img/index-image-images/resizeApi3.png" />&nbsp;&nbsp;金毛犬</th>
         </tr>
-        <tr>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/jm1.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：英系金毛</p>
-                        <p>价格：6000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/jm2.jpg" alt="泰迪犬" class="img-circle"> </a>
-                    <div class="caption">
-                        <p>名称：纯种金毛 </p>
-                        <p>价格：2000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/jm3.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：纯种金毛 </p>
-                        <p>价格：2500.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/jm4.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：英系金毛 </p>
-                        <p>价格：4000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/jm5.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：赛级金毛 </p>
-                        <p>价格：2800.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="thumbnail">
-                    <a href="#"><img src="/pets-town/img/index-image-images/jm6.jpg" alt="泰迪犬" class="img-circle"></a>
-                    <div class="caption">
-                        <p>名称：英系金毛 </p>
-                        <p>价格：6000.00</p>
-                        <p><a href="#" class="btn btn-default" role="button">查看</a> <a href="#" class="btn btn-primary" role="button">购买</a> </p>
-                    </div>
-                </div>
-            </td>
-        </tr>
+        <tr id = "showGolden"></tr>
     </table>
 </div>
 <div class="container th-style">
@@ -372,31 +134,7 @@
         </div>    </div>
 </div>
 <!--页脚-->
-<div class="footer" style="margin-top: 20px;">
-    <div class="container-fluid" style="padding: 0;">
-        <hr class="nav-hr" style="border-top-color: #009635;"/>
-        <div class="row" id="footer-list">
-            <ul class="list-inline">
-                <li><a href="#">网站介绍</a></li>|
-                <li><a href="#">隐私政策 </a></li>|
-                <li><a href="#">广告服务</a></li>|
-                <li><a href="#">合作媒体 </a></li>|
-                <li><a href="#">投稿指南</a></li>|
-                <li><a href="#">使用条款 </a></li>|
-                <li><a href="#">联系我们 </a></li>
-                <li><a href="#"> 用户体验提升计划 </a></li>
-                <li><a href="#"> 网站地图 </a></li>
-                <li><a href="#"> 淘狗网指数 </a></li>
-            </ul>
-        </div>
-        <div class="row" style="margin: 0;">
-            <p style="color: #5C5C5C;line-height: 3em;">Copyright © 2013 - 淘狗网(dog126.com) - 京ICP备11011882号 网站建设：<a href="#">恰维网络 </a></p>
-        </div>
-        <div class="row" style="margin: 0;">
-            <p style="color: #5C5C5C;line-height: 3em;">【免责声明：淘狗网上所有宠物狗交易信息内容系用户自行发布，其真实性、合法性由发布人负责，淘狗网不提供任何保证，亦不承担任何法律责任！】</p>
-        </div>
-    </div>
-</div>
+<jsp:include page="TheIndexFoodPage.jsp"></jsp:include>
 <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/unslider/js/unslider-min.js" ></script>
 <script type="text/javascript">
     $(function () {
@@ -409,6 +147,83 @@
             key: true
         });
     });
+    //获取当前项目的路径
+    var urlRootContext = (function () {
+        var strPath = window.document.location.pathname;
+        var postPath = strPath.substring(0, strPath.substr(1).indexOf('/') + 1);
+        return postPath;
+    })();
+    $(document).ready(function() {
+        var teddyurl = urlRootContext+"/show/teddy";
+        $.ajax({
+            type:"post",
+            url:teddyurl,
+            dataType:"json",
+            success: function(data){
+                console.log(data)
+                $(data).each(function () {
+                    $("#show-teddy").append(
+                            "<td>"+
+                            "<div class='thumbnail'>"+
+                            "<a href='#'><img src='"+this.petImage+"' alt='泰迪' class='img-circle'></a>"+
+                            " <div class='caption'>"+
+                            "<p>名称："+this.petName+"</p>"+
+                            "<p>价格："+this.petPrice+"</p>"+
+                            "<p><a href='#' class='btn btn-default' role='button'>查看</a> <a href='#' class='btn btn-primary' role='button'>购买</a> </p>"+
+                            " </div>"+
+                            " </div>"+
+                            "</td>")
+                })
+            }
+        })
+        var bichonurl = urlRootContext+"/show/bichon";
+        $.ajax({
+            type:"post",
+            url:bichonurl,
+            dataType:"json",
+            success: function(data){
+                console.log(data)
+                $(data).each(function () {
+                    $("#show-bichon").append(
+                            "<td>"+
+                            "<div class='thumbnail'>"+
+                            "<a href='#'><img src='"+this.petImage+"' alt='比熊犬' class='img-circle'></a>"+
+                            " <div class='caption'>"+
+                            "<p>名称："+this.petName+"</p>"+
+                            "<p>价格："+this.petPrice+"</p>"+
+                            "<p><a href='#' class='btn btn-default' role='button'>查看</a> <a href='#' class='btn btn-primary' role='button'>购买</a> </p>"+
+                            " </div>"+
+                            " </div>"+
+                            "</td>")
+                })
+            }
+        })
+        var url =  urlRootContext + "/show/golden";
+        $.ajax({
+            type:"post",
+            url:url,
+            dataType:"json",
+            success: function(data){
+                console.log(data)
+                $(data).each(function () {
+                    $("#showGolden").append(
+                            "<td>"+
+                            "<div class='thumbnail'>"+
+                            "<a href='#'><img src='"+this.petImage+"' alt='金毛' class='img-circle'></a>"+
+                            " <div class='caption'>"+
+                            "<p>名称："+this.petName+"</p>"+
+                            "<p>价格："+this.petPrice+"</p>"+
+                            "<p><a href='#' class='btn btn-default' role='button'>查看</a> <a href='#' class='btn btn-primary' role='button'>购买</a> </p>"+
+                            " </div>"+
+                            " </div>"+
+                            "</td>")
+                })
+            }
+        })
+
+    })
+
+
 </script>
 </body>
 </html>

@@ -20,6 +20,13 @@
     where pet_name like #{petName,jdbcType=VARCHAR}
   </select>
 
+  <select id="selectDog" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select
+    <include refid="Base_Column_List" />
+    from t_show_pets
+    where pet_type =#{petType,jdbcType=INTEGER}
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_show_pets
     where id = #{id,jdbcType=INTEGER}

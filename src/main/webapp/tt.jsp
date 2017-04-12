@@ -9,43 +9,31 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/lib/jquery-3.1.1.min.js" ></script>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap-paginator.js"></script>
 </head>
 <body>
-<form action="ChannelManageAction.a" method="post" enctype="multipart/form-data"
-      class="form-horizontal" id="basic_validate" novalidate="novalidate">
-    <div class="control-group">
-        <label class="control-label">频道名称:</label>
-        <div class="controls">
-            <input style="width:180px" type="text" name="channelName">
-        </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="s2">频道类型:</label>
-        <div class="controls">
-            <select  style="width:200px;" name="channelType"  id="s2">
-                <app:dictselect dictType="1105"/>
-            </select>
-        </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label">频道信号源:</label>
-        <div class="controls">
-            <input style="width:180px" type="text" name="channelSignal" onblur="checkChannelSignal('',this.value)">
-            <span id="showMsg" style="color: red"></span>
-        </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label">频道logo地址:</label>
-        <div class="controls">
-            <input type="file" name="fileContent" id="fileContent">
-        </div>
-    </div>
-    <div class="form-actions" style="padding-left: 180px;">
-        <button type="submit" name="doAddChannelInfo" class="btn btn-primary">
-            <i class="icon-ok icon-white"></i>保存</button>&nbsp;&nbsp;
-        <button type="button" class="btn btn-primary cancelBtn">
-            <i class="icon-remove icon-white"></i>取消</button>
-    </div>
-</form>
+<table  border="1px red solid" >
+   <tr >
+       <td >你好啊</td>
+       <tbody class="tab-content" id="tableBody"></tbody>
+   </tr>
+    <tr>
+       <th>不好啊</th>
+        <tbody class="tab-content" id="tableBodys"></tbody>
+    </tr>
+
+
+
+</table>
+<script type='text/javascript'>
+    $(document).ready(function() {
+            $("#tableBody").append("<tr><td>sdshf</td></tr>")
+           $("#tableBodys").append("<tr><td>哈哈哈哈</td></tr>")
+    })
+</script>
 </body>
 </html>

@@ -23,4 +23,9 @@ public class BackstageController {
     public  String toShowPetsManage(){
         return "backstageShowPetsManage";
     }
+
+    @RequestMapping("background/indexVideo")
+    public  String toIndexVideo(){
+        return "backstageIndexVideoManage";
+    }
 }

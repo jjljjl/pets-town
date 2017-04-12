@@ -9,44 +9,16 @@
 <html>
 <head>
     <title>后台用户管理</title>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/lib/jquery-3.1.1.min.js" ></script>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap-paginator.js"></script>
-    <style type="text/css">
-        #queryDiv {
-            margin-right: auto;
-            margin-left: auto;
-            width:600px;
-        }
-        #textInput {
-            margin-top: 10px;
-        }
-
-        td {
-            width:150px;
-            height:40px;
-            padding-left: 10px;
-            border: solid 2px gainsboro;
-        }
-        #bottomTab{
-            position:fixed;
-            bottom: 200px;
-            left: 400px;
-        }
-        #bottomTab  ul
-        {
-            list-style-type:none;
-            margin:0;
-            padding:0;
-        }
-        #bottomTab li{
-            display:inline;
-            margin-left: 5px;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css"
+          href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript"
+            src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap-paginator.js"></script>
+    <link href="<%=request.getContextPath() %>/css/backgroud-manage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="panel-group">
@@ -55,11 +27,7 @@
             后台管理
         </div>
         <div class="panel-body">
-            <ul class="nav nav-tabs" >
-                <li role="presentation" class="active"><a href="user">用户管理</a></li>
-                <li role="presentation"><a href="admin">管理员</a></li>
-                <li role="presentation"><a href="showPets">商品管理</a></li>
-            </ul>
+             <jsp:include page="TheBackstageToolbar.jsp"></jsp:include>
             <div role="tabpanel" class="tab-pane active" id="user">
                 <table class="table table-bordered table-hover" >
                     <div id = "queryDiv">
@@ -86,75 +54,75 @@
 <script type='text/javascript'>
     //获取当前项目的路径
     var urlRootContext = (function () {
-        var strPath = window.document.location.pathname;
-        var postPath = strPath.substring(0, strPath.substr(1).indexOf('/') + 1);
-        return postPath;
-    })();
+                        var strPath = window.document.location.pathname;
+                        var postPath = strPath.substring(0, strPath.substr(1).indexOf('/') + 1);
+                        return postPath;
+                    })();
 
-    var PAGESIZE = 10;
-    var options = {
-        currentPage: 1,  //当前页数
-        totalPages: 10,  //总页数，这里只是暂时的，后头会根据查出来的条件进行更改
-        size:"normal",
-        alignment:"center",
-        itemTexts: function (type, page, current) {
-            switch (type) {
-                case "first":
-                    return "第一页";
-                case "prev":
-                    return "前一页";
-                case "next":
-                    return "后一页";
-                case "last":
-                    return "最后页";
-                case "page":
-                    return  page;
-            }
-        },
-        onPageClicked: function (e, originalEvent, type, page) {
-            var userName = $("#textInput").val(); //取内容
-            buildTable(userName,page,PAGESIZE);//默认每页最多10条
-        }
-    }
-
-    //生成表格
-    function buildTable(userName,pageNumber,pageSize) {
-        $(function () {
-            var url =  urlRootContext + "/lists"; //请求的网址
-            var reqParams = {'userName':userName, 'pageNumber':pageNumber,'pageSize':pageSize};//请求数据
-            $.ajax({
-                type:"POST",
-                url:url,
-                data:reqParams,
-                async:false,
-                dataType:"json",
-                success: function(data){
-
-                        // options.totalPages = data.pages;
-                        var newoptions = {
-                            currentPage: 1,  //当前页数
-                            totalPages: data.pages==0?1:data.pages,  //总页数
-                            size:"normal",
-                            alignment:"center",
-                            itemTexts: function (type, page, current) {
-                                switch (type) {
-                                    case "first":
-                                        return "第一页";
-                                    case "prev":
-                                        return "前一页";
-                                    case "next":
-                                        return "后一页";
-                                    case "last":
-                                        return "最后页";
-                                    case "page":
-                                        return  page;
-                                }
-                            },
-                            onPageClicked: function (e, originalEvent, type, page) {
-                                var userName = $("#textInput").val(); //取内容
-                                buildTable(userName,page,PAGESIZE);//默认每页最多10条
+                    var PAGESIZE = 10;
+                    var options = {
+                        currentPage: 1,  //当前页数
+                        totalPages: 10,  //总页数，这里只是暂时的，后头会根据查出来的条件进行更改
+                        size:"normal",
+                        alignment:"center",
+                        itemTexts: function (type, page, current) {
+                            switch (type) {
+                                case "first":
+                                    return "第一页";
+                                case "prev":
+                                    return "前一页";
+                                case "next":
+                                    return "后一页";
+                                case "last":
+                                    return "最后页";
+                                case "page":
+                                    return  page;
                             }
+                        },
+                        onPageClicked: function (e, originalEvent, type, page) {
+                            var userName = $("#textInput").val(); //取内容
+                            buildTable(userName,page,PAGESIZE);//默认每页最多10条
                         }
+                    }
+
+                    //生成表格
+                    function buildTable(userName,pageNumber,pageSize) {
+                        $(function () {
+                            var url =  urlRootContext + "/lists"; //请求的网址
+                            var reqParams = {'userName':userName, 'pageNumber':pageNumber,'pageSize':pageSize};//请求数据
+                            $.ajax({
+                                type:"POST",
+                                url:url,
+                                data:reqParams,
+                                async:false,
+                                dataType:"json",
+                                success: function(data){
+
+                                    // options.totalPages = data.pages;
+                                    var newoptions = {
+                                        currentPage: 1,  //当前页数
+                                        totalPages: data.pages==0?1:data.pages,  //总页数
+                                        size:"normal",
+                                        alignment:"center",
+                                        itemTexts: function (type, page, current) {
+                                            switch (type) {
+                                                case "first":
+                                                    return "第一页";
+                                                case "prev":
+                                                    return "前一页";
+                                                case "next":
+                                                    return "后一页";
+                                                case "last":
+                                                    return "最后页";
+                                                case "page":
+                                                    return  page;
+                                            }
+                                        },
+                                        onPageClicked: function (e, originalEvent, type, page) {
+                                            var userName = $("#textInput").val(); //取内容
+                                            buildTable(userName,page,PAGESIZE);//默认每页最多10条
+                                        }
+                                    }
                         $('#bottomTab').bootstrapPaginator("setOptions",newoptions); //重新设置总页面数目
                         var dataList = data.dataList;
                         $("#tableBody").empty();//清空表格内容

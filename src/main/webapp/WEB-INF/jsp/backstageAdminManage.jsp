@@ -9,44 +9,16 @@
 <html>
 <head>
     <title>管理员</title>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/lib/jquery-3.1.1.min.js" ></script>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
-    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap-paginator.js"></script>
-    <style type="text/css">
-        #queryDiv {
-            margin-right: auto;
-            margin-left: auto;
-            width:600px;
-        }
-        #textInput {
-            margin-top: 10px;
-        }
-
-        td {
-            width:150px;
-            height:40px;
-            padding-left: 10px;
-            border: solid 2px gainsboro;
-        }
-        #bottomTab{
-            position:fixed;
-            bottom: 200px;
-            left: 400px;
-        }
-        #bottomTab  ul
-        {
-            list-style-type:none;
-            margin:0;
-            padding:0;
-        }
-        #bottomTab li{
-            display:inline;
-            margin-left: 5px;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css"
+          href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
+    <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/lib/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript"
+            src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap-paginator.js"></script>
+    <link href="<%=request.getContextPath() %>/css/backgroud-manage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div class="panel-group">
@@ -55,11 +27,7 @@
             后台管理
         </div>
         <div class="panel-body">
-            <ul class="nav nav-tabs" >
-                <li role="presentation" class="active"><a href="user">用户管理</a></li>
-                <li role="presentation"><a href="admin">管理员</a></li>
-                <li role="presentation"><a href="showPets">商品管理</a></li>
-            </ul>
+            <jsp:include page="TheBackstageToolbar.jsp"></jsp:include>
             <div role="tabpanel" class="tab-pane" id="messages">
                 <div id = "queryDiv">
                     <input id = "textInput" type="text" placeholder="请输入用户名" >

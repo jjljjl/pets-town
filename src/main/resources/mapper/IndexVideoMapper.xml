@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pet.dao.IndexVideoMapper" >
+  <resultMap id="BaseResultMap" type="pet.model.IndexVideo" >
+    <id column="video_id" property="videoId" jdbcType="VARCHAR" />
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="video_name" property="videoName" jdbcType="VARCHAR" />
+    <result column="video_url" property="videoUrl" jdbcType="VARCHAR" />
+    <result column="created_on" property="createdOn" jdbcType="DATE" />
+    <result column="video_image" property="videoImage" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    video_id, id, video_name, video_url, created_on, video_image
+  </sql>
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_index_video
+    where video_name like #{videoName,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_index_video
+    where video_id = #{videoId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="pet.model.IndexVideo" >
+    insert into t_index_video (video_id, id, video_name, 
+      video_url, created_on, video_image
+      )
+    values (#{videoId,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}, #{videoName,jdbcType=VARCHAR},
+      #{videoUrl,jdbcType=VARCHAR}, #{createdOn,jdbcType=DATE}, #{videoImage,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pet.model.IndexVideo" >
+    insert into t_index_video
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="videoId != null" >
+        video_id,
+      </if>
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="videoName != null" >
+        video_name,
+      </if>
+      <if test="videoUrl != null" >
+        video_url,
+      </if>
+      <if test="createdOn != null" >
+        created_on,
+      </if>
+      <if test="videoImage != null" >
+        video_image,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="videoId != null" >
+        #{videoId,jdbcType=INTEGER},
+      </if>
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="videoName != null" >
+        #{videoName,jdbcType=VARCHAR},
+      </if>
+      <if test="videoUrl != null" >
+        #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createdOn != null" >
+        #{createdOn,jdbcType=DATE},
+      </if>
+      <if test="videoImage != null" >
+        #{videoImage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="pet.model.IndexVideo" >
+    update t_index_video
+    <set >
+      <if test="id != null" >
+        id = #{id,jdbcType=INTEGER},
+      </if>
+      <if test="videoName != null" >
+        video_name = #{videoName,jdbcType=VARCHAR},
+      </if>
+      <if test="videoUrl != null" >
+        video_url = #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createdOn != null" >
+        created_on = #{createdOn,jdbcType=DATE},
+      </if>
+      <if test="videoImage != null" >
+        video_image = #{videoImage,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where video_id = #{videoId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pet.model.IndexVideo" >
+    update t_index_video
+    set id = #{id,jdbcType=INTEGER},
+      video_name = #{videoName,jdbcType=VARCHAR},
+      video_url = #{videoUrl,jdbcType=VARCHAR},
+      created_on = #{createdOn,jdbcType=DATE},
+      video_image = #{videoImage,jdbcType=VARCHAR}
+    where video_id = #{videoId,jdbcType=INTEGER}
+  </update>
+</mapper>

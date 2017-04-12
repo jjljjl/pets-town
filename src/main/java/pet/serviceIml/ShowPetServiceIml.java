@@ -9,6 +9,8 @@ import pet.service.ShowPetsService;
 import pet.util.BeanUtil;
 import pet.util.PagedResult;
 
+import java.util.List;
+
 /**
  * Created by developer on 2017/3/24.
  */
@@ -41,4 +43,21 @@ public class ShowPetServiceIml implements ShowPetsService {
         pets.setPetPrice(petPrice);
         showPetsMapper.insert(pets);
     }
+
+    @Override
+    public List<ShowPets> queryGoldenDog(Integer petType) {
+        return showPetsMapper.selectDog(petType);
+    }
+
+    @Override
+    public List<ShowPets> queryTeddy(Integer petType) {
+        return showPetsMapper.selectDog(petType);
+    }
+
+    @Override
+    public List<ShowPets> queryBichon(Integer petType) {
+        return showPetsMapper.selectDog(petType);
+    }
+
+
 }
