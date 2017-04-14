@@ -134,7 +134,7 @@
                                 $("#tableBody").append('<td>' + this.password + '</td>');
                                 $("#tableBody").append('<td>' + this.telphone+ '</td>');
                                 $("#tableBody").append('<td>' + this.email + '</td>');
-                                $("#tableBody").append('<td>   <button type="button" id="deleteU" class="btn btn-danger" onclick="deleteUser()">'+
+                                $("#tableBody").append('<td>   <button type="button" id="deleteU" class="btn btn-danger" onclick="deleteUser('+this.id+')">'+
                                         ' <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除'+
                                         ' </button></td>');
                                 $("#tableBody").append('</tr>');
@@ -164,9 +164,9 @@
             buildTable(userName,1,PAGESIZE);
         });
     });
-    function deleteUser(){
-        var userId = $("#selectId")[0].textContent;
-        window.location.href = urlRootContext+"/delete/user?userId="+userId;
+    function deleteUser(id){
+
+        window.location.href = urlRootContext+"/delete/user?userId="+id;
     }
 </script>
 </body>

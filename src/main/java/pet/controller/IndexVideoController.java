@@ -2,6 +2,7 @@ package pet.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by developer on 2017/4/12.
@@ -56,5 +58,17 @@ public class IndexVideoController extends BaseController {
         java.sql.Date createdOn =  new java.sql.Date(date.getTime());
         indexVideoService.addVideos(videoName,filename,videosName,videoId,createdOn);
         return "redirect:/background/indexVideo";
+    }
+
+    @RequestMapping("show/videos")
+    @ResponseBody
+    public List<IndexVideo> showVideos(ModelMap modelMap){
+        List<IndexVideo> indexVideos = indexVideoService.selectAllVideos();
+        indexVideos.forEach(e->{
+            e.setVideoImage("/pets-town/uploadImg/index-videos/"+e.getVideoImage());
+            e.setVideoUrl("/pets-town/uploadImg/index-videos/"+e.getVideoUrl());
+        });
+        modelMap.addAllAttributes(indexVideos);
+        return  indexVideos;
     }
 }

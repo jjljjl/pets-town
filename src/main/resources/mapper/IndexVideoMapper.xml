@@ -18,6 +18,13 @@
     from t_index_video
     where video_name like #{videoName,jdbcType=VARCHAR}
   </select>
+
+  <select id="selectAllVideos" resultMap="BaseResultMap"  >
+    select
+    <include refid="Base_Column_List" />
+    from t_index_video
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_index_video
     where video_id = #{videoId,jdbcType=INTEGER}

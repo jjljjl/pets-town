@@ -17,4 +17,6 @@ public interface IndexVideoMapper {
     int updateByPrimaryKeySelective(IndexVideo record);
 
     int updateByPrimaryKey(IndexVideo record);
+
+    List<IndexVideo> selectAllVideos();
 }

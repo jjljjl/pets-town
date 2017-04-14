@@ -20,4 +20,8 @@ public interface ShowPetsService {
     List<ShowPets> queryTeddy(Integer petType);
 
     List<ShowPets> queryBichon(Integer petType);
+
+    ShowPets findPets(Integer id);
+
+
 }

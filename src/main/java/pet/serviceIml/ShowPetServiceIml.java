@@ -59,5 +59,12 @@ public class ShowPetServiceIml implements ShowPetsService {
         return showPetsMapper.selectDog(petType);
     }
 
+    @Override
+    public ShowPets findPets(Integer id) {
+        return showPetsMapper.selectPetsById(id);
+    }
+
+
+
 
 }

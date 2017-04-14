@@ -40,6 +40,7 @@
                         <td class="active">图片</td>
                         <td class="success">修改</td>
                         <td class="danger">删除</td>
+                        <td class="success">添加详细图片</td>
                     </tr>
                     <tbody id="tableBody" class="tab-content">
                 </table>
@@ -86,7 +87,38 @@
     </div>
 </div>
 
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel1">添加宠物</h4>
+            </div>
+            <div class="modal-body">
+                <form action="<%=request.getContextPath() %>/addImage" method="post" id="addPetsForm1" enctype="multipart/form-data">
+                    <input type="hidden" id="hid" value="" name="pId">
+                    <label for="exampleInputFile1">选择图片1</label>
+                    <input type="file" id="exampleInputFile1" name = "petImage" class="form-control">
 
+                    <label for="exampleInputFile2">选择图片2</label>
+                    <input type="file" id="exampleInputFile2" name = "petImage" class="form-control">
+
+
+                    <label for="exampleInputFile3">选择图片3</label>
+                    <input type="file" id="exampleInputFile3" name = "petImage" class="form-control">
+
+
+                    <label for="exampleInputFile4">选择图片4</label>
+                    <input type="file" id="exampleInputFile4" name = "petImage" class="form-control">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" onclick="addImage()">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type='text/javascript'>
     //获取当前项目的路径
@@ -124,6 +156,7 @@
 
     //生成表格
     function buildTable(userName, pageNumber, pageSize) {
+
         $(function () {
             var url = urlRootContext + "/pets"; //请求的网址
             var reqParams = {'userName': userName, 'pageNumber': pageNumber, 'pageSize': pageSize};//请求数据
@@ -164,6 +197,7 @@
                         $("#tableBody").empty();//清空表格内容
                         if (dataList.length > 0) {
                             $(dataList).each(function () {//重新生成
+
                                 $("#tableBody").append('<tr>');
                                 $("#tableBody").append('<td id="selectId">' + this.id + '</td>');
                                 $("#tableBody").append('<td>' + this.petName + '</td>');
@@ -182,9 +216,12 @@
                                        ' <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改'+
                                         '</button></td>');
                                 $("#tableBody").append('</tr>');
-                                $("#tableBody").append('<td>   <button type="button" id="deleteU" class="btn btn-danger" onclick="deleteUser()">' +
+                                $("#tableBody").append('<td>   <button type="button" id="deleteU" class="btn btn-danger" onclick="deleteUser('+this.id+')">' +
                                         ' <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除' +
                                         ' </button></td>');
+                                $("#tableBody").append('<td> <button type="button" class="btn btn-success btn-sm" onclick="saveId('+this.id+')"  data-toggle="modal" data-target="#myModal1">'+
+                                        '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>添加'+
+                                        '</button></td> ');
                                 $("#tableBody").append('</tr>');
                             });
                         } else {
@@ -212,9 +249,9 @@
             buildTable(userName, 1, PAGESIZE);
         });
     });
-    function deleteUser() {
-        var petId = $("#selectId")[0].textContent;
-        window.location.href = urlRootContext + "/delete/pets?petId=" + petId;
+    function deleteUser(id) {
+
+        window.location.href = urlRootContext + "/delete/pets?petId=" + id;
     }
         function addPets() {
             var form1 = document.getElementById("addPetsForm");
@@ -233,6 +270,21 @@
                 form1.submit()
             }
         }
+
+
+          var s=0;
+          function saveId(id){
+              s=id;
+
+          }
+
+    function addImage(){
+        var form1 = document.getElementById("addPetsForm1");
+        $("#hid").val(s);
+        form1.submit();
+    }
+
+
 
 </script>
 </body>

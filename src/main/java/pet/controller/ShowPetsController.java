@@ -62,7 +62,7 @@ public class ShowPetsController extends BaseController {
         /*-------转存文件-----  */
         File targetFile = new File(path,fileName);
         if(!targetFile.exists()){
-           targetFile.mkdirs();
+            targetFile.mkdirs();
         }
         try {
             petImage.transferTo(targetFile);
@@ -84,7 +84,7 @@ public class ShowPetsController extends BaseController {
 
     @RequestMapping("show/teddy")
     @ResponseBody
-     public List<ShowPets> showTeddy(ModelMap modelMap){
+    public List<ShowPets> showTeddy(ModelMap modelMap){
         List<ShowPets> result =  showPetsService.queryTeddy(0);
         result.forEach(e->e.setPetImage("/pets-town/uploadImg/index-jinmao/"+e.getPetImage()));
         modelMap.addAllAttributes(result);
@@ -92,11 +92,12 @@ public class ShowPetsController extends BaseController {
     }
 
     @RequestMapping("show/bichon")
-     @ResponseBody
+    @ResponseBody
     public  List<ShowPets> showBichon(ModelMap modelMap){
         List<ShowPets> showPetsList = showPetsService.queryBichon(1);
         showPetsList.forEach(e->e.setPetImage("/pets-town/uploadImg/index-jinmao/"+e.getPetImage()));
         modelMap.addAllAttributes(showPetsList);
         return showPetsList;
     }
+
 }

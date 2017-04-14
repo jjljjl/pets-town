@@ -45,7 +45,6 @@
                         <td class="active">视频地址</td>
                         <td class="active">封面地址</td>
                         <td class="active">上传时间</td>
-                        <td class="danger">删除</td>
                     </tr>
                     <tbody id="tableBody" class="tab-content">
                 </table>
@@ -170,13 +169,10 @@
                             $("#tableBody").append('<td>' + this.videoImage + '</td>');
                             $("#tableBody").append('<td>' + this.createdOn.toString()+ '</td>');
                             $("#tableBody").append('</tr>');
-                            $("#tableBody").append('<td>   <button type="button" id="deleteU" class="btn btn-danger" onclick="deleteUser()">' +
-                                    ' <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除' +
-                                    ' </button></td>');
-                            $("#tableBody").append('</tr>');
+
                         });
                     } else {
-                        $("#tableBody").append('<tr><th colspan ="4"><center>查询无数据</center></th></tr>');
+                        $("#tableBody").append('<tr><th colspan ="5"><center>查询无数据</center></th></tr>');
                     }
                 },
                 error: function (e) {

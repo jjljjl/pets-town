@@ -19,4 +19,5 @@ public interface ShowPetsMapper {
     int updateByPrimaryKey(ShowPets record);
     List<ShowPets> selectDog(Integer petType);
 
+    ShowPets selectPetsById(Integer id);
 }

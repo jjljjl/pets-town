@@ -10,6 +10,7 @@ import pet.util.BeanUtil;
 import pet.util.PagedResult;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  * Created by developer on 2017/4/12.
@@ -30,5 +31,10 @@ public class IndexVideoServiceIml implements IndexVideoService {
     public void addVideos(String videoName, String filename, String videosName, String videoId, Date createdOn) {
         IndexVideo indexVideo =  new IndexVideo(videoId, videoName, videosName, createdOn, filename);
         indexVideoMapper.insert(indexVideo);
+    }
+
+    @Override
+    public List<IndexVideo> selectAllVideos() {
+        return indexVideoMapper.selectAllVideos();
     }
 }

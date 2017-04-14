@@ -130,7 +130,7 @@
                                     $("#tableBody").append('<td id="selectId">' + this.id + '</td>');
                                     $("#tableBody").append('<td>' + this.adminName + '</td>');
                                     $("#tableBody").append('<td>' + this.adminPwd + '</td>');
-                                    $("#tableBody").append('<td>   <button type="button" id="deleteU" class="btn btn-danger" onclick="deleteUser()">'+
+                                    $("#tableBody").append('<td>   <button type="button" id="deleteU" class="btn btn-danger" onclick="deleteUser('+this.id+')">'+
                                             ' <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除'+
                                             ' </button></td>');
                                     $("#tableBody").append('</tr>');
@@ -175,9 +175,9 @@
                 }
             })
         }*/
-        function deleteUser() {
-            var adminId = $("#selectId")[0].textContent;
-            window.location.href= urlRootContext+"/delete/admin?adminId="+adminId;
+        function deleteUser(id) {
+
+            window.location.href= urlRootContext+"/delete/admin?adminId="+id;
         }
     </script>
 

@@ -19,5 +19,8 @@
 <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/lib/jquery-3.1.1.min.js" ></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
 <script src="<%=request.getContextPath() %>/plateform/lib/vedio.js/video.min.js" type="text/javascript" charset="utf-8"></script>
+<script src ="<%=request.getContextPath()%>/plateform/js/distpicker.data.js" type="text/javascript" charset="utf-8"></script>
+<script src ="<%=request.getContextPath()%>/plateform/js/distpicker.js" type="text/javascript" charset="utf-8"></script>
+<script src ="<%=request.getContextPath()%>/plateform/js/main.js" type="text/javascript" charset="utf-8"></script>
 
 
