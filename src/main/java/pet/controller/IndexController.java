@@ -24,5 +24,10 @@ public class IndexController {
     public  String toMain(){
         return  "main";
     }
+
+    @RequestMapping("/toPersonCenter")
+    public String toPersonCenter(){
+        return "ThePersonCenter";
+    }
 }
 

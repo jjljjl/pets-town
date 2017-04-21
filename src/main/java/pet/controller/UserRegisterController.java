@@ -10,6 +10,7 @@ import pet.service.UserRegisterService;
 import pet.util.PagedResult;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by developer on 2017/3/15.
@@ -23,10 +24,10 @@ public class UserRegisterController extends BaseController{
 
     @RequestMapping("/register")
     public String UserRegister(@RequestParam("username") String username,
-                                @RequestParam("password") String password,
-                                @RequestParam("telphone") String telphone,
-                                @RequestParam("email") String email,
-                               ModelMap modelMap){
+                               @RequestParam("password") String password,
+                               @RequestParam("telphone") String telphone,
+                               @RequestParam("email") String email,
+                               ModelMap modelMap, HttpServletRequest request){
         Boolean isExistUser = userRegisterService.isHave(username);
         if(isExistUser){
             UserRegister user = new UserRegister();
@@ -36,6 +37,7 @@ public class UserRegisterController extends BaseController{
             user.setUserName(username);
             modelMap.addAttribute("msg","注册成功");
             userRegisterService.insertUser(user);
+            request.getSession().setAttribute("user",user);
             return "main";
         }
      modelMap.addAttribute("msg","该用户名已存在");

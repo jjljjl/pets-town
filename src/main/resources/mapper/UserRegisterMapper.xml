@@ -7,9 +7,10 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="telphone" property="telphone" jdbcType="VARCHAR" />
     <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="head_image" property="headImage" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, user_name, password, telphone, email
+    id, user_name, password, telphone, email,head_image
   </sql>
   <select id="selectByUserName" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 

@@ -98,7 +98,8 @@ function deleteCount(){
     }
 
     function submitOrder(){
-        window.location.href = urlRootContext+"/submit/order";
+        var count = $("#exampleInputAmount").val()
+        window.location.href = urlRootContext+"/submit/order?id="+'${requestScope.showPets.id}'+"&count="+count;
     }
 
 </script>

@@ -3,6 +3,7 @@ package pet.service;
 import pet.model.ShowPets;
 import pet.util.PagedResult;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -24,4 +25,5 @@ public interface ShowPetsService {
     ShowPets findPets(Integer id);
 
 
+    void addOrder(Integer uId, Double petPrice, Integer count, Timestamp createOn, Integer id);
 }

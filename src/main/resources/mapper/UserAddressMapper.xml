@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pet.dao.UserAddressMapper" >
+  <resultMap id="BaseResultMap" type="pet.model.UserAddress" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="u_id" property="uId" jdbcType="INTEGER" />
+    <result column="adr_area" property="adrArea" jdbcType="VARCHAR" />
+    <result column="adr_full_address" property="adrFullAddress" jdbcType="VARCHAR" />
+    <result column="post_code" property="postCode" jdbcType="VARCHAR" />
+    <result column="receipt_name" property="receiptName" jdbcType="VARCHAR" />
+    <result column="telphone" property="telphone" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, u_id, adr_area, adr_full_address, post_code, receipt_name, telphone
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_address
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_user_address
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="pet.model.UserAddress" >
+    insert into t_user_address (id, u_id, adr_area, 
+      adr_full_address, post_code, receipt_name, 
+      telphone)
+    values (#{id,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{adrArea,jdbcType=VARCHAR}, 
+      #{adrFullAddress,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR}, #{receiptName,jdbcType=VARCHAR}, 
+      #{telphone,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="pet.model.UserAddress" >
+    insert into t_user_address
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uId != null" >
+        u_id,
+      </if>
+      <if test="adrArea != null" >
+        adr_area,
+      </if>
+      <if test="adrFullAddress != null" >
+        adr_full_address,
+      </if>
+      <if test="postCode != null" >
+        post_code,
+      </if>
+      <if test="receiptName != null" >
+        receipt_name,
+      </if>
+      <if test="telphone != null" >
+        telphone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uId != null" >
+        #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="adrArea != null" >
+        #{adrArea,jdbcType=VARCHAR},
+      </if>
+      <if test="adrFullAddress != null" >
+        #{adrFullAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null" >
+        #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptName != null" >
+        #{receiptName,jdbcType=VARCHAR},
+      </if>
+      <if test="telphone != null" >
+        #{telphone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="pet.model.UserAddress" >
+    update t_user_address
+    <set >
+      <if test="uId != null" >
+        u_id = #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="adrArea != null" >
+        adr_area = #{adrArea,jdbcType=VARCHAR},
+      </if>
+      <if test="adrFullAddress != null" >
+        adr_full_address = #{adrFullAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="postCode != null" >
+        post_code = #{postCode,jdbcType=VARCHAR},
+      </if>
+      <if test="receiptName != null" >
+        receipt_name = #{receiptName,jdbcType=VARCHAR},
+      </if>
+      <if test="telphone != null" >
+        telphone = #{telphone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pet.model.UserAddress" >
+    update t_user_address
+    set u_id = #{uId,jdbcType=INTEGER},
+      adr_area = #{adrArea,jdbcType=VARCHAR},
+      adr_full_address = #{adrFullAddress,jdbcType=VARCHAR},
+      post_code = #{postCode,jdbcType=VARCHAR},
+      receipt_name = #{receiptName,jdbcType=VARCHAR},
+      telphone = #{telphone,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

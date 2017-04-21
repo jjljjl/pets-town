@@ -4,11 +4,14 @@ import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pet.dao.ShowPetsMapper;
+import pet.dao.TheUserOrderMapper;
 import pet.model.ShowPets;
+import pet.model.TheUserOrder;
 import pet.service.ShowPetsService;
 import pet.util.BeanUtil;
 import pet.util.PagedResult;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 /**
@@ -19,6 +22,9 @@ public class ShowPetServiceIml implements ShowPetsService {
 
     @Autowired
     ShowPetsMapper showPetsMapper;
+
+    @Autowired
+    TheUserOrderMapper theUserOrderMapper;
 
     @Override
     public PagedResult<ShowPets> queryPage(String username, Integer pageNo, Integer pageSize) {
@@ -64,7 +70,17 @@ public class ShowPetServiceIml implements ShowPetsService {
         return showPetsMapper.selectPetsById(id);
     }
 
-
+    @Override
+    public void addOrder(Integer uId, Double petPrice, Integer count, Timestamp createOn, Integer id) {
+        TheUserOrder order = new TheUserOrder();
+        order.setuId(uId);
+        order.setPetPrice(petPrice);
+        order.setPetCount(count);
+        order.setCreateOn(createOn);
+        order.setpId(id);
+        order.setStatus(0);
+        theUserOrderMapper.insert(order);
+    }
 
 
 }

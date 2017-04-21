@@ -73,7 +73,7 @@
             </table>
             <hr>
             <div class="col-md-4" style="margin-top: 20px"><button type="button" class="btn btn-info" onclick="buyPets()"> <img src="/pets-town/img/index/buyPets.png"/> 立即购买 </button></div>
-            <div class="col-md-4" style="margin-top: 20px"><button type="button" class="btn btn-danger"><img src="/pets-town/img/index/car.png"/> 加入购物车</button></div>
+            <div class="col-md-4" style="margin-top: 20px"><button type="button" class="btn btn-danger" onclick="addToCar()"><img src="/pets-town/img/index/car.png"/> 加入购物车</button></div>
         </div>
         <div class="col-md-3">
 
@@ -141,6 +141,10 @@
         small_thumbs : 4,
         autoplay : true
     });
+
+    function addToCar(){
+        window.location.href = "/pets-town/addToCar?id="+${requestScope.seePets.id};
+    }
 </script>
 </body>
 </html>

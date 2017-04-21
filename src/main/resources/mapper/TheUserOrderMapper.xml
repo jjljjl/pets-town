@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pet.dao.TheUserOrderMapper" >
+  <resultMap id="BaseResultMap" type="pet.model.TheUserOrder" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="u_id" property="uId" jdbcType="INTEGER" />
+    <result column="pet_price" property="petPrice" jdbcType="DOUBLE" />
+    <result column="pet_count" property="petCount" jdbcType="INTEGER" />
+    <result column="create_on" property="createOn" jdbcType="TIMESTAMP" />
+    <result column="p_id" property="pId" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, u_id, pet_price, pet_count, create_on, p_id,status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_user_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="pet.model.TheUserOrder" >
+    insert into t_user_order (id, u_id, pet_price, 
+      pet_count, create_on, p_id,status
+      )
+    values (#{id,jdbcType=INTEGER}, #{uId,jdbcType=INTEGER}, #{petPrice,jdbcType=DOUBLE}, 
+      #{petCount,jdbcType=INTEGER}, #{createOn,jdbcType=TIMESTAMP}, #{pId,jdbcType=INTEGER},#{status,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="pet.model.TheUserOrder" >
+    insert into t_user_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uId != null" >
+        u_id,
+      </if>
+      <if test="petPrice != null" >
+        pet_price,
+      </if>
+      <if test="petCount != null" >
+        pet_count,
+      </if>
+      <if test="createOn != null" >
+        create_on,
+      </if>
+      <if test="pId != null" >
+        p_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uId != null" >
+        #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="petPrice != null" >
+        #{petPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="petCount != null" >
+        #{petCount,jdbcType=INTEGER},
+      </if>
+      <if test="createOn != null" >
+        #{createOn,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pId != null" >
+        #{pId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="pet.model.TheUserOrder" >
+    update t_user_order
+    <set >
+      <if test="uId != null" >
+        u_id = #{uId,jdbcType=INTEGER},
+      </if>
+      <if test="petPrice != null" >
+        pet_price = #{petPrice,jdbcType=DOUBLE},
+      </if>
+      <if test="petCount != null" >
+        pet_count = #{petCount,jdbcType=INTEGER},
+      </if>
+      <if test="createOn != null" >
+        create_on = #{createOn,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pId != null" >
+        p_id = #{pId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="pet.model.TheUserOrder" >
+    update t_user_order
+    set u_id = #{uId,jdbcType=INTEGER},
+      pet_price = #{petPrice,jdbcType=DOUBLE},
+      pet_count = #{petCount,jdbcType=INTEGER},
+      create_on = #{createOn,jdbcType=TIMESTAMP},
+      p_id = #{pId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

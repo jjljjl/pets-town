@@ -215,7 +215,13 @@
 
                 $(data).each(function () {
                     var id = this.id;
-                    var strings = "/pets-town/buyPets?id="+id;
+                    var strings ="";
+                    <c:if test="${sessionScope.user==null}">
+                     strings = "login";
+                    </c:if>
+                    <c:if test="${sessionScope.user!=null}">
+                     strings = "/pets-town/buyPets?id="+id;;
+                    </c:if>
                     $("#show-teddy").append(
                             "<td>" +
                             "<div class='thumbnail'>" +

@@ -21,4 +21,10 @@ public class LoginServiceIml implements LoginService{
         }
         return true;
     }
+
+    @Override
+    public UserRegister findUser(String userName) {
+        UserRegister userRegister = userRegisterMapper.selectByUserName(userName);
+        return userRegister;
+    }
 }

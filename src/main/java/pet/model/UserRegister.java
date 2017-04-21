@@ -11,6 +11,8 @@ public class UserRegister {
 
     private String email;
 
+    private String headImage;
+
     public Integer getId() {
         return id;
     }
@@ -49,5 +51,13 @@ public class UserRegister {
 
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
+    }
+
+    public String getHeadImage() {
+        return headImage;
+    }
+
+    public void setHeadImage(String headImage) {
+        this.headImage = headImage==null?null:headImage.trim();
     }
 }
