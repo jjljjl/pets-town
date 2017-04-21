@@ -73,7 +73,7 @@
             </table>
             <hr>
             <div class="col-md-4" style="margin-top: 20px"><button type="button" class="btn btn-info" onclick="buyPets()"> <img src="/pets-town/img/index/buyPets.png"/> 立即购买 </button></div>
-            <div class="col-md-4" style="margin-top: 20px"><button type="button" class="btn btn-danger" onclick="addToCar()"><img src="/pets-town/img/index/car.png"/> 加入购物车</button></div>
+            <div class="col-md-4" style="margin-top: 20px" id="changes"><button type="button" class="btn btn-danger" onclick="addToCar()"><img src="/pets-town/img/index/car.png"/> 加入购物车</button></div>
         </div>
         <div class="col-md-3">
 
@@ -143,7 +143,20 @@
     });
 
     function addToCar(){
-        window.location.href = "/pets-town/addToCar?id="+${requestScope.seePets.id};
+        //window.location.href = "/pets-town/addToCar?id="+${requestScope.seePets.id};
+        var url =  "/pets-town/addToCar?id="+${requestScope.seePets.id};
+        $.ajax({
+            type: "POST",
+            url: url,
+            async: false,
+            dataType: "json",
+            success: function () {
+                $("#changes").append("<p id='p1' style='font-weight: bold'>添加成功</p>")
+                $("#p1").css("color","red").slideUp(1000).slideDown(1000);
+                $("#p1").empty();
+               // alert("添加成功，请到购物车中查看");
+            }
+        })
     }
 </script>
 </body>

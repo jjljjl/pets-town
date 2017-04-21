@@ -4,10 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import pet.model.ShowPets;
 import pet.model.UserRegister;
 import pet.service.ShowPetsService;
 import pet.service.TheUserOrderService;
+import pet.util.PagedResult;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -26,7 +28,8 @@ public class TheUserOrderController {
     ShowPetsService showPetsService;
 
     @RequestMapping("addToCar")
-     public String addToCar(HttpServletRequest request, @RequestParam("id") Integer id){
+    @ResponseBody
+     public PagedResult addToCar(HttpServletRequest request, @RequestParam("id") Integer id){
         ShowPets showPets = showPetsService.findPets(id);
         HttpSession session = request.getSession(false);
         UserRegister user = (UserRegister) session.getAttribute("user");
@@ -34,6 +37,6 @@ public class TheUserOrderController {
         Date date = new Date();
         Timestamp createOn = new Timestamp(date.getTime());
         theUserOrderService.addToCar(uId,showPets.getPetPrice(),createOn,id);
-        return  "ThePetDetails";
+        return new PagedResult();
     }
 }
