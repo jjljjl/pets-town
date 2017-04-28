@@ -9,6 +9,7 @@ import pet.model.ShowPets;
 import pet.model.UserRegister;
 import pet.service.ShowPetsService;
 import pet.service.TheUserOrderService;
+import pet.serviceIml.TheUserOrderServiceIml;
 import pet.util.PagedResult;
 
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +21,7 @@ import java.util.Date;
  * Created by developer on 2017/4/21.
  */
 @Controller
-public class TheUserOrderController {
+public class TheUserOrderController extends BaseController{
     @Autowired
     private TheUserOrderService theUserOrderService;
 
@@ -38,5 +39,41 @@ public class TheUserOrderController {
         Timestamp createOn = new Timestamp(date.getTime());
         theUserOrderService.addToCar(uId,showPets.getPetPrice(),createOn,id);
         return new PagedResult();
+    }
+
+    /**
+     * 在页面显示所有的订单
+     * @param pageNumber
+     * @param pageSize
+     * @param request
+     * @return
+     */
+    @RequestMapping("/show/userCart")
+    @ResponseBody
+    public PagedResult<TheUserOrderServiceIml.Order> showCart(Integer pageNumber, Integer pageSize,HttpServletRequest request){
+        UserRegister user =(UserRegister) request.getSession(false).getAttribute("user");
+        Integer id = user.getId();
+        PagedResult<TheUserOrderServiceIml.Order> pagedResult =  theUserOrderService.queryPage(pageNumber,pageSize,id);
+        return  pagedResult;
+    }
+
+    /**
+     * 删除订单
+     * @return
+     */
+    @RequestMapping("delete/order")
+    public  String deleteOrder(@RequestParam("id") Integer id){
+         theUserOrderService.deleteOrder(id);
+        return "redirect:/allOrder";
+    }
+
+    @RequestMapping("/allOrder")
+    public String allOrder(){
+        return "TheUserAllOrder";
+    }
+
+    @RequestMapping("/purchasedOrder")
+    public String purchasedOrder(){
+        return "TheUserPurchasedOrder";
     }
 }

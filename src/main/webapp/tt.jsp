@@ -16,23 +16,30 @@
     <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/bootstrap-3.3.7-dist/js/bootstrap-paginator.js"></script>
 </head>
 <body>
-<table  border="1px red solid" >
-   <tr >
-       <td >你好啊</td>
-       <tbody class="tab-content" id="tableBody"></tbody>
-   </tr>
-    <tr>
-       <th>不好啊</th>
-        <tbody class="tab-content" id="tableBodys"></tbody>
-    </tr>
+<div class="container">
+    <table  class="table"  id="tableBody">
+
+        <tr>
+            <td class="success">订单名称</td>
+            <td class="success">商品详情</td>
+            <td class="success">价格</td>
+            <td class="success">数量</td>
+            <td class="success">总金额</td>
+        </tr>
 
 
+    </table>
+</div>
 
-</table>
 <script type='text/javascript'>
     $(document).ready(function() {
-            $("#tableBody").append("<tr><td>sdshf</td></tr>")
-           $("#tableBodys").append("<tr><td>哈哈哈哈</td></tr>")
+            $("#tableBody").append("<tr><td>sdshf</td>" +
+                    "<td>sdshf</td>" +
+                    "<td>sdshf</td>" +
+                    "<td>sdshf</td>" +
+
+                    "</tr>")
+
     })
 </script>
 </body>

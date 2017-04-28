@@ -28,7 +28,7 @@
                 <c:if test="${sessionScope.user!=null}">
                     <li class="header-left"><img src="/pets-town/img/index/welcome.png">欢迎您：<span style="font-weight: bold;color: maroon">${sessionScope.user.userName}</span></li>
                     <li><a href="toPersonCenter" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-expo'])" target="_blank"><img src="/pets-town/img/index/person.png">&nbsp;个人中心</a></li>
-                    <li><a href="toRegister" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-expo'])" target="_blank"><img src="/pets-town/img/index/index-car.png">&nbsp;购物车</a></li>
+                    <li><a href="toUserCart" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-expo'])" target="_blank"><img src="/pets-town/img/index/index-car.png">&nbsp;购物车</a></li>
                     <li><a href="toRegisterOut" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-expo'])" target="_self" style="color: red">退出</a></li>
                 </c:if>
                 <li><a href="http://blog.getbootstrap.com" onclick="_hmt.push(['_trackEvent', 'docv3-navbar', 'click', 'doc-home-navbar-blog'])" target="_blank">新闻中心</a></li>

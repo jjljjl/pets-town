@@ -29,5 +29,10 @@ public class IndexController {
     public String toPersonCenter(){
         return "ThePersonCenter";
     }
+
+    @RequestMapping("/toUserCart")
+    public String toUserCart(){
+        return "TheUserShopCart";
+    }
 }
 

@@ -73,7 +73,7 @@
             </table>
             <hr>
             <div class="col-md-4" style="margin-top: 20px"><button type="button" class="btn btn-info" onclick="buyPets()"> <img src="/pets-town/img/index/buyPets.png"/> 立即购买 </button></div>
-            <div class="col-md-4" style="margin-top: 20px" id="changes"><button type="button" class="btn btn-danger" onclick="addToCar()"><img src="/pets-town/img/index/car.png"/> 加入购物车</button></div>
+            <div class="col-md-4" style="margin-top: 20px" id="changes"><button type="button" class="btn btn-danger" onclick="addToCar()" data-toggle="modal" data-target=".bs-example-modal-sm"><img src="/pets-town/img/index/car.png"/> 加入购物车</button></div>
         </div>
         <div class="col-md-3">
 
@@ -104,36 +104,17 @@
 
 
 </div>
-<div class="footer" style="margin-top: 20px;">
-    <div class="container-fluid" style="padding: 0;">
-        <hr class="nav-hr" style="border-top-color: #009635;"/>
-        <div class="row" id="footer-list">
-            <ul class="list-inline">
-                <li><a href="#">网站介绍</a></li>|
-                <li><a href="#">隐私政策 </a></li>|
-                <li><a href="#">广告服务</a></li>|
-                <li><a href="#">合作媒体 </a></li>|
-                <li><a href="#">投稿指南</a></li>|
-                <li><a href="#">使用条款 </a></li>|
-                <li><a href="#">联系我们 </a></li>
-                <li><a href="#"> 用户体验提升计划 </a></li>
-                <li><a href="#"> 网站地图 </a></li>
-                <li><a href="#"> 淘狗网指数 </a></li>
-            </ul>
-        </div>
-        <div class="row" style="margin: 0;">
-            <p style="color: #5C5C5C;line-height: 3em;">Copyright © 2013 - 淘狗网(dog126.com) - 京ICP备11011882号 网站建设：<a href="#">恰维网络 </a></p>
-        </div>
-        <div class="row" style="margin: 0;">
-            <p style="color: #5C5C5C;line-height: 3em;">【免责声明：淘狗网上所有宠物狗交易信息内容系用户自行发布，其真实性、合法性由发布人负责，淘狗网不提供任何保证，亦不承担任何法律责任！】</p>
-        </div>
-    </div>
-</div>
+<jsp:include page="TheIndexChangeFoodPage.jsp"></jsp:include>
 <script type="text/javascript" src="<%=request.getContextPath() %>/plateform/fangdajing/js/jqzoom.js"></script>
 <script type="text/javascript">
 
     function buyPets(){
-        window.location.href = "/pets-town/buyPets?id="+${requestScope.seePets.id};
+        if(${sessionScope.user==null}){
+            window.location.href = "/pets-town/login";
+        }else{
+            window.location.href = "/pets-town/buyPets?id="+${requestScope.seePets.id};
+        }
+
     }
     $("#etalage").zoom({
         zoom_area_width: 300,
@@ -144,6 +125,9 @@
 
     function addToCar(){
         //window.location.href = "/pets-town/addToCar?id="+${requestScope.seePets.id};
+        if(${sessionScope.user==null}){
+            window.location.href = "/pets-town/login";
+        }
         var url =  "/pets-town/addToCar?id="+${requestScope.seePets.id};
         $.ajax({
             type: "POST",
@@ -151,10 +135,7 @@
             async: false,
             dataType: "json",
             success: function () {
-                $("#changes").append("<p id='p1' style='font-weight: bold'>添加成功</p>")
-                $("#p1").css("color","red").slideUp(1000).slideDown(1000);
-                $("#p1").empty();
-               // alert("添加成功，请到购物车中查看");
+                alert("添加成功，请到购物车中查看");
             }
         })
     }

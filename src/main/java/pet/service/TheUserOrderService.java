@@ -1,5 +1,8 @@
 package pet.service;
 
+import pet.serviceIml.TheUserOrderServiceIml;
+import pet.util.PagedResult;
+
 import java.sql.Timestamp;
 
 /**
@@ -7,4 +10,7 @@ import java.sql.Timestamp;
  */
 public interface TheUserOrderService {
     void addToCar(Integer uId, Double petPrice, Timestamp createOn, Integer id);
+    PagedResult<TheUserOrderServiceIml.Order> queryPage( Integer pageNo, Integer pageSize,Integer id);
+
+    void deleteOrder(Integer id);
 }
