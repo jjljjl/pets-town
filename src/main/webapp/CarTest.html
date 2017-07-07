@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8" >
+    <title>Title</title>
+    <meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" type="text/css" href="plateform/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="plateform/bootstrap-3.3.7-dist/css/bootstrap-theme.css"/>
+    <link  rel=" stylesheet" type="text/css" href="plateform/bootstrap-3.3.7-dist/css/bootstrap-datetimepicker.min.css"/>
+    <script type="text/javascript" src="plateform/lib/jquery-3.1.1.min.js" ></script>
+    <script type="text/javascript" src="plateform/bootstrap-3.3.7-dist/js/bootstrap.min.js" ></script>
+    <script type="text/javascript" src="plateform/bootstrap-3.3.7-dist/js/bootstrap-datetimepicker.min.js"></script>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+</head>
+<body  >
+
+<div id="Layer1" class="idx-body" >
+    <img src="img/index/backgroud.jpg" width="100%" height="100%"/>
+    <div class="container" style="margin-top: -130%;padding-left: 16%;z-index: 20">
+        <form class="form-horizontal" >
+            <div class="col-xs-10">
+                <div class="form-group">
+                    <input type="text" class="form-control form_datetime input-sm"  name="loginTime" value="" placeholder="初登日期">
+                </div>
+                <div class="form-group" style="margin-top: -0.5em">
+                    <input type="number" class="form-control  input-sm"  name="carPrice" value="" placeholder="行驶里数">
+                </div>
+
+                <div class="form-group" style="margin-top: -1.5em">
+                    <select id="disabledSelect" class="form-control input-sm" name="isImport" >
+                        <option value="">是否进口</option>
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-top: -1.5em">
+                    <select id="" class="form-control input-sm" name="carSeries" >
+                        <option value="">车系</option>
+                        <option value="1">国产</option>
+                        <option value="0">日韩</option>
+                        <option value="0">欧美</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-top: -1.5em">
+                    <select  class="form-control input-sm" name="carBrand"  >
+                        <option value="">品牌</option>
+                        <option value="1">宝马</option>
+                        <option value="0">奔驰</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-top: -1.5em">
+                    <select  class="form-control input-sm" name="carMode" >
+                        <option value="">型号</option>
+                        <option value="1">宝马</option>
+                        <option value="0">奔驰</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control  input-sm"  name="carPrice" value="" placeholder="车价" style="margin-top: -0.5em">
+                </div>
+                <div class="form-group" style="margin-top: -1.5em">
+                    <select  class="form-control input-sm" name="delayYear"  >
+                        <option value="">延保年限</option>
+                        <option value="1">宝马</option>
+                        <option value="0">奔驰</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-danger btn-sm" style="margin-top: -1em;width: 100%">提交</button>
+                </div>
+            </div>
+
+        </form>
+
+
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        format: " yyyy MM dd ",
+        minView: "month", //选择日期后，不会再跳转去选择时分秒
+        language:  "zh-CN",
+    });
+</script>
+</body>
+</html>
