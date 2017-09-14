@@ -16,7 +16,7 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath*:spring.xml</param-value>
     </context-param>
-
+<!--配置编码-->
     <filter>
         <filter-name>characterEncodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
